@@ -1,4 +1,4 @@
-# Freighter
+# AstraX
 
 This repo is constructed using yarn workspaces and consists of the 4 sections:
 
