@@ -1,4 +1,4 @@
-import { browser } from "webextension-polyfill-ts";
+import browser from "webextension-polyfill";
 import {
   EXTERNAL_SERVICE_TYPES,
   SERVICE_TYPES,

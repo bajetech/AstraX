@@ -1,5 +1,5 @@
+import browser from "webextension-polyfill";
 import { initMessageListener } from "background";
-import { browser } from "webextension-polyfill-ts";
 import { ROUTES } from "popup/constants/routes";
 
 browser.runtime.onMessage.addListener((message) => {
