@@ -20,7 +20,7 @@ export const sendMessageToContentScript = (msg: {}): Promise<Response> => {
     window.location.origin,
   );
   return new Promise((resolve, reject) => {
-    if (!window.freighter) {
+    if (!window.astrax) {
       reject(new NoExtensionInstalledError());
     }
 

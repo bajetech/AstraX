@@ -1,10 +1,10 @@
-import StellarSdk from "stellar-sdk";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
 import { DataProvider } from "@stellar/wallet-sdk";
 import {
   Account,
   AccountDetailsInterface,
   Balances,
-  HorizonOperation,
+  FrontierOperation,
   Settings,
 } from "./types";
 import {
@@ -222,7 +222,7 @@ export const getAccountDetails = async ({
 
   let balances = null;
   let isFunded = null;
-  let operations = [] as Array<HorizonOperation>;
+  let operations = [] as Array<FrontierOperation>;
 
   try {
     ({ balances } = await dataProvider.fetchAccountDetails());
@@ -237,7 +237,7 @@ export const getAccountDetails = async ({
   }
 
   try {
-    const server = new StellarSdk.Server(networkUrl);
+    const server = new DigitalBitsSdk.Server(networkUrl);
     const operationsData = await server
       .operations()
       .forAccount(publicKey)
