@@ -1,4 +1,4 @@
-# Usage in Freighter Monorepo
+# Usage in AstraX Monorepo
 
 ## Installation
 
