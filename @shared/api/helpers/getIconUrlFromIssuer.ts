@@ -1,7 +1,7 @@
-import StellarSdk, { StellarTomlResolver } from "stellar-sdk";
+import DigitalBitsSdk, { DigitalBitsTomlResolver } from "xdb-digitalbits-sdk";
 import { sendMessageToBackground } from "./extensionMessaging";
 import { SERVICE_TYPES } from "../../constants/services";
-import { NetworkDetails } from "../../helpers/stellar";
+import { NetworkDetails } from "../../helpers/digitalbits";
 
 /* 
 This runs a slightly convoluted process to find an icon's url. 
@@ -56,7 +56,7 @@ export const getIconUrlFromIssuer = async ({
   try {
     /* Otherwise, 1. load their account from the API */
     const { networkUrl } = networkDetails;
-    const server = new StellarSdk.Server(networkUrl);
+    const server = new DigitalBitsSdk.Server(networkUrl);
     response = await server.loadAccount(key);
   } catch (e) {
     return iconUrl;
@@ -67,7 +67,7 @@ export const getIconUrlFromIssuer = async ({
 
   try {
     /* 2. Use their domain from their API account and use it attempt to load their stellar.toml */
-    toml = await StellarTomlResolver.resolve(homeDomain);
+    toml = await DigitalBitsTomlResolver.resolve(homeDomain);
   } catch (e) {
     console.error(e);
     return iconUrl;

@@ -1,5 +1,5 @@
-import StellarSdk from "stellar-sdk";
-import { NETWORKS, NETWORK_NAMES } from "../constants/stellar";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
+import { NETWORKS, NETWORK_NAMES } from "../constants/digitalbits";
 
 export interface NetworkDetails {
   isTestnet: boolean;
@@ -8,8 +8,8 @@ export interface NetworkDetails {
   otherNetworkName: string;
   networkUrl: string;
   networkPassphrase:
-    | typeof StellarSdk.Networks.TESTNET
-    | typeof StellarSdk.Networks.PUBLIC;
+    | typeof DigitalBitsSdk.Networks.TESTNET
+    | typeof DigitalBitsSdk.Networks.PUBLIC;
 }
 
 export const MAINNET_NETWORK_DETAILS = {
@@ -17,8 +17,8 @@ export const MAINNET_NETWORK_DETAILS = {
   network: NETWORKS.PUBLIC,
   networkName: NETWORK_NAMES.PUBNET,
   otherNetworkName: NETWORK_NAMES.TESTNET,
-  networkUrl: "https://horizon.stellar.org",
-  networkPassphrase: StellarSdk.Networks.PUBLIC,
+  networkUrl: "https://frontier.livenet.digitalbits.io",
+  networkPassphrase: DigitalBitsSdk.Networks.PUBLIC,
 } as NetworkDetails;
 
 export const TESTNET_NETWORK_DETAILS = {
@@ -26,8 +26,8 @@ export const TESTNET_NETWORK_DETAILS = {
   network: NETWORKS.TESTNET,
   networkName: NETWORK_NAMES.TESTNET,
   otherNetworkName: NETWORK_NAMES.PUBNET,
-  networkUrl: "https://horizon-testnet.stellar.org",
-  networkPassphrase: StellarSdk.Networks.TESTNET,
+  networkUrl: "https://frontier.testnet.digitalbits.io",
+  networkPassphrase: DigitalBitsSdk.Networks.TESTNET,
 } as NetworkDetails;
 
 export const getNetworkDetails = (isTestnet: boolean) =>

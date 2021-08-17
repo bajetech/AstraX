@@ -1,9 +1,9 @@
-import { Horizon } from "stellar-sdk";
+import { Frontier } from "xdb-digitalbits-sdk";
 import { Types } from "@stellar/wallet-sdk";
 
 import { SERVICE_TYPES, EXTERNAL_SERVICE_TYPES } from "../constants/services";
 import { APPLICATION_STATE } from "../constants/applicationState";
-import { NetworkDetails } from "../helpers/stellar";
+import { NetworkDetails } from "../helpers/digitalbits";
 
 export interface Response {
   error: string;
@@ -63,20 +63,20 @@ export interface AssetIcons {
 export type Balances = Types.BalanceMap | null;
 
 /* eslint-disable camelcase */
-export type HorizonOperation = Horizon.PaymentOperationResponse & {
-  transaction_attr: Horizon.TransactionResponse;
+export type FrontierOperation = Frontier.PaymentOperationResponse & {
+  transaction_attr: Frontier.TransactionResponse;
 };
 /* eslint-enable camelcase */
 
 export interface AccountDetailsInterface {
   balances: Balances;
   isFunded: boolean | null;
-  operations: Array<HorizonOperation> | [];
+  operations: Array<FrontierOperation> | [];
 }
 
 declare global {
   interface Window {
-    freighter: boolean;
-    freighterApi: { [key: string]: any };
+    astrax: boolean;
+    astraxApi: { [key: string]: any };
   }
 }
