@@ -7,7 +7,10 @@ import {
   HorizonOperation,
   Settings,
 } from "./types";
-import { MAINNET_NETWORK_DETAILS, NetworkDetails } from "../helpers/stellar";
+import {
+  MAINNET_NETWORK_DETAILS,
+  NetworkDetails,
+} from "../helpers/digitalbits";
 import { SERVICE_TYPES } from "../constants/services";
 import { APPLICATION_STATE } from "../constants/applicationState";
 import { sendMessageToBackground } from "./helpers/extensionMessaging";

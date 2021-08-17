@@ -1,5 +1,5 @@
 import { EXTERNAL_SERVICE_TYPES } from "../constants/services";
-import { NETWORKS } from "../constants/stellar";
+import { NETWORKS } from "../constants/digitalbits";
 import { sendMessageToContentScript } from "./helpers/extensionMessaging";
 
 export const requestPublicKey = async (): Promise<string> => {

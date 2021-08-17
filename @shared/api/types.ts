@@ -3,7 +3,7 @@ import { Types } from "@stellar/wallet-sdk";
 
 import { SERVICE_TYPES, EXTERNAL_SERVICE_TYPES } from "../constants/services";
 import { APPLICATION_STATE } from "../constants/applicationState";
-import { NetworkDetails } from "../helpers/stellar";
+import { NetworkDetails } from "../helpers/digitalbits";
 
 export interface Response {
   error: string;
