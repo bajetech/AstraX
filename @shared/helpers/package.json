@@ -3,8 +3,9 @@
   "prettier": "@stellar/prettier-config",
   "version": "1.0.0",
   "dependencies": {
+    "stellar-sdk": "5.0.1",
     "typescript": "~3.7.2",
-    "stellar-sdk": "5.0.1"
+    "xdb-digitalbits-sdk": "^8.2.2"
   },
   "devDependencies": {
     "@stellar/prettier-config": "^1.0.1"
