@@ -1,5 +1,5 @@
 {
-  "name": "digitalbits-astrax-api",
+  "name": "@bajetech/astrax-api",
   "version": "1.0.0",
   "license": "Apache-2.0",
   "author": "The DigitalBits Foundation <hello@digitalbits.io>",
@@ -14,6 +14,6 @@
     "build": "webpack --config webpack.production.js --mode production",
     "start": "webpack --config webpack.dev.js --watch --mode development"
   },
-  "types": "build/digitalbits-astrax-api/src/index.d.ts",
+  "types": "build/@bajetech/astrax-api/src/index.d.ts",
   "dependencies": {}
 }

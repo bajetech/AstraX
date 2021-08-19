@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const ModuleReplaceWebpackPlugin = require("module-replace-webpack-plugin");
 const path = require("path");
-const { DEFAULT_STATS } = require("../config/webpack");
+const { DEFAULT_STATS } = require("../../config/webpack");
 
 const BUILD_PATH = path.resolve(__dirname, "./build");
 
@@ -45,7 +45,7 @@ const config = {
       modules: [
         {
           test: /webextension-polyfill/,
-          replace: "../config/shims/webextension-polyfill.ts"
+          replace: "../../config/shims/webextension-polyfill.ts"
         }
       ]
     })

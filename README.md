@@ -3,7 +3,7 @@
 This repo is constructed using yarn workspaces and consists of the 4 sections:
 
 - the browser extension (`/extension`)
-- the client-facing SDK (`/digitalbits-astrax-api`)
+- the client-facing SDK (`/@bajetech/astrax-api`)
 - the docs (`/docs`)
 - some shared files that the above use (`/@shared/*`)
 
@@ -39,7 +39,7 @@ yarn start
 
 This will start up multiple watching builds in parallel:
 
-- The `digitalbits-astrax-api` npm module
+- The `@bajetech/astrax-api` npm module
 - The docs, serving on `localhost:3000`
 - A dev server with the webapp running in the extension, serving on
   `localhost:9000`
@@ -50,7 +50,7 @@ Each of these will build in response to editing their source.
 These can be started individually with `yarn start:\<workspace name\>` where
 `\<workspace name\>` is one of:
 
-- `digitalbits-astrax-api`
+- `astrax-api`
 - `docs`
 - `extension`
 
@@ -58,7 +58,7 @@ These can be started individually with `yarn start:\<workspace name\>` where
 yarn build
 ```
 
-This will produce final output for the docs, the `digitalbits-astrax-api` npm module, and
+This will produce final output for the docs, the `@bajetech/astrax-api` npm module, and
 the extension.
 
 `yarn build:\<workspace name\>`, like the equivalent start commands, will build

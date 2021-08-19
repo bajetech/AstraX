@@ -1,6 +1,6 @@
 module.exports = {
   rootDir: __dirname,
-  roots: ["./", "./extension", "./@shared/api", "./digitalbits-astrax-api"],
+  roots: ["./", "./extension", "./@shared/api", "./@bajetech/astrax-api"],
   collectCoverageFrom: ["src/**/*.{js,jsx,mjs}"],
   setupFiles: ["<rootDir>/config/jest/setupTests.ts"],
   setupFilesAfterEnv: ["<rootDir>/config/jest/extendJest.ts"],
