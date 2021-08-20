@@ -10,7 +10,7 @@ We now have an extension installed on our machine and a library to interact with
 First import the whole library in a Node.js application
 
 ```javascript
-import freighterApi from "@stellar/freighter-api";
+import freighterApi from "@bajetech/astrax-api";
 ```
 
 or import just the modules you require:
@@ -20,7 +20,7 @@ import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 ```
 
 Now let's dig into what functionality is available to you:
@@ -32,7 +32,7 @@ Now let's dig into what functionality is available to you:
 This function is useful for determining if a user in your application has Freighter installed.
 
 ```javascript
-import { isConnected } from "@stellar/freighter-api";
+import { isConnected } from "@bajetech/astrax-api";
 
 if (isConnected()) {
   alert("User has Freighter!");
@@ -52,7 +52,7 @@ import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
   alert("User has Freighter!");
@@ -89,7 +89,7 @@ import {
   isConnected,
   getNetwork,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
   alert("User has Freighter!");
@@ -134,7 +134,7 @@ import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
   alert("User has Freighter!");

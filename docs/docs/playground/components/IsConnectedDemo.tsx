@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { isConnected } from "@stellar/freighter-api";
+import { isConnected } from "@bajetech/astrax-api";
 import { PlaygroundInput } from "./basics/inputs";
 
 export const IsConnectedDemo = () => {

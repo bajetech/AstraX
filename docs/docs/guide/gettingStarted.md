@@ -18,11 +18,11 @@ Now we need a way to communicate with the extension. To facilitate this, we crea
 
 #### For Node.js applications
 
-- Install the module using npm: `npm install @stellar/freighter-api`
+- Install the module using npm: `npm install @bajetech/astrax-api`
 
 or
 
-- Install the module using yarn: `yarn add @stellar/freighter-api`
+- Install the module using yarn: `yarn add @bajetech/astrax-api`
 
 #### For browser-based applications
 

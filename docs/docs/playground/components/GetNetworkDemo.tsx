@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getNetwork } from "@stellar/freighter-api";
+import { getNetwork } from "@bajetech/astrax-api";
 import { PlaygroundInput } from "./basics/inputs";
 
 export const GetNetworkDemo = () => {
