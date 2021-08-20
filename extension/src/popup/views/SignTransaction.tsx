@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
-
-import {
-  COLOR_PALETTE,
-  FONT_WEIGHT,
-  ROUNDED_CORNERS,
-} from "popup/constants/styles";
 import { TRANSACTION_WARNING } from "constants/transaction";
-
 import { emitMetric } from "helpers/metrics";
 import { getTransactionInfo } from "helpers/stellar";
-import { decodeMemo } from "popup/helpers/decodeMemo";
-
-import { rejectTransaction, signTransaction } from "popup/ducks/access";
-import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
-
 import { Button } from "popup/basics/Buttons";
 import { ButtonContainer, SubmitButton } from "popup/basics/Modal";
-
-import { METRIC_NAMES } from "popup/constants/metricsNames";
-
-import { FirstTimeWarningMessage } from "popup/components/warningMessages/FirstTimeWarningMessage";
 import { Header } from "popup/components/Header";
-import { FlaggedWarningMessage } from "popup/components/warningMessages/FlaggedWarningMessage";
-import { WarningMessage } from "popup/components/WarningMessage";
 import { PunycodedDomain } from "popup/components/PunycodedDomain";
 import { Transaction } from "popup/components/signTransaction/Transaction";
 import { TransactionHeader } from "popup/components/signTransaction/TransactionHeader";
+import { WarningMessage } from "popup/components/WarningMessage";
+import { FirstTimeWarningMessage } from "popup/components/warningMessages/FirstTimeWarningMessage";
+import { FlaggedWarningMessage } from "popup/components/warningMessages/FlaggedWarningMessage";
+import { METRIC_NAMES } from "popup/constants/metricsNames";
+import {
+    COLOR_PALETTE,
+    FONT_WEIGHT,
+    ROUNDED_CORNERS
+} from "popup/constants/styles";
+import { rejectTransaction, signTransaction } from "popup/ducks/access";
+import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
+import { decodeMemo } from "popup/helpers/decodeMemo";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
+
+
+
+
+
+
 
 const El = styled.div`
   padding: 1.5rem 1.875rem;
@@ -128,7 +128,7 @@ export const SignTransaction = () => {
 
   const NetworkMismatchWarning = () => (
     <>
-      <WarningMessage subheader={`Freighter is currently on ${networkName}`}>
+      <WarningMessage subheader={`AstraX is currently on ${networkName}`}>
         <p>The transaction you’re trying to sign is on {otherNetworkName}.</p>
         <p>Signing this transaction is not possible at the moment.</p>
       </WarningMessage>

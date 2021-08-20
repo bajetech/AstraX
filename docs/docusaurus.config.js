@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Freighter Documentation",
+  title: "AstraX Documentation",
   url: "https://docs.freighter.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -8,9 +8,9 @@ module.exports = {
   projectName: "freighterDocs",
   themeConfig: {
     navbar: {
-      title: "Freighter Documentation",
+      title: "AstraX Documentation",
       logo: {
-        alt: "Freighter Logo",
+        alt: "AstraX Logo",
         src: "./images/logo.png",
       },
       items: [

@@ -4,17 +4,17 @@ title: Getting Started
 slug: /
 ---
 
-To get started, you'll need both the Freighter extension and the API needed to integrate with it.
+To get started, you'll need both the AstraX extension and the API needed to integrate with it.
 
-### Install the Freighter extension.
+### Install the AstraX extension.
 
 You'll want a local version of the extension to test with.
 
-- Head over to the [Chrome extension store](https://chrome.google.com/webstore/category/extensions?hl=en) and install Freighter into your browser.
+- Head over to the [Chrome extension store](https://chrome.google.com/webstore/category/extensions?hl=en) and install AstraX into your browser.
 
-### Install Freighter API
+### Install AstraX API
 
-Now we need a way to communicate with the extension. To facilitate this, we create a Javascript library called Freighter-API that will let you send and receives messages from the extension.
+Now we need a way to communicate with the extension. To facilitate this, we create a Javascript library called AstraX-API that will let you send and receives messages from the extension.
 
 #### For Node.js applications
 

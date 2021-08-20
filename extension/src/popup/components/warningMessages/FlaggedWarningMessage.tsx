@@ -1,6 +1,6 @@
-import React from "react";
 import WarningExclamationIcon from "popup/assets/icon-warning-exclamation.svg";
 import WarningShieldIcon from "popup/assets/icon-warning-shield.svg";
+import React from "react";
 import { WarningMessage } from "../WarningMessage";
 
 const DirectoryLink = () => (
@@ -57,7 +57,7 @@ const MemoWarningMessage = ({ isMemoRequired }: { isMemoRequired: boolean }) =>
     >
       <p>
         A destination account requires the use of the memo field which is not
-        present in the transaction you’re about to sign. Freighter automatically
+        present in the transaction you’re about to sign. AstraX automatically
         disabled the option to sign this transaction.
       </p>
 

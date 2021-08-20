@@ -1,6 +1,6 @@
 ---
 id: usingFreighterNode
-title: Using Freighter in node.js
+title: Using AstraX in node.js
 ---
 
 We now have an extension installed on our machine and a library to interact with it. This library will provide you methods to send and receive data from a user's extension in your website or application.
@@ -29,13 +29,13 @@ Now let's dig into what functionality is available to you:
 
 #### `isConnected() -> <boolean>`
 
-This function is useful for determining if a user in your application has Freighter installed.
+This function is useful for determining if a user in your application has AstraX installed.
 
 ```javascript
 import { isConnected } from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 ```
 
@@ -55,7 +55,7 @@ import {
 } from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrievePublicKey = async () => {
@@ -82,7 +82,7 @@ const result = retrievePublicKey();
 
 #### `getNetwork() -> <Promise<"PUBLIC" | "TESTNET">>`
 
-This function is useful for determining what network the user has configured Freighter to use. Freighter will be configured to either `PUBLIC` or `TESTNET`.
+This function is useful for determining what network the user has configured AstraX to use. AstraX will be configured to either `PUBLIC` or `TESTNET`.
 
 ```javascript
 import {
@@ -92,7 +92,7 @@ import {
 } from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrieveNetwork = async () => {
@@ -127,7 +127,7 @@ _NOTE:_ The user must provide a valid transaction XDR string for the extension t
 
 The second parameter is an optional string that you may pass to indicate what network you’re intending this transaction to be signed on. The parameter must be either `PUBLIC` or `TESTNET`. If you choose not to pass a param, freighter-api will default to `PUBLIC`.
 
-This is useful in the case that the user's Freighter is configured to the wrong network. Freighter will be able to throw a blocking error message communicating that you intended this transaction to be signed on a different network.
+This is useful in the case that the user's AstraX is configured to the wrong network. AstraX will be able to throw a blocking error message communicating that you intended this transaction to be signed on a different network.
 
 ```javascript
 import {
@@ -137,7 +137,7 @@ import {
 } from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrievePublicKey = async () => {

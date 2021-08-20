@@ -1,23 +1,14 @@
 import {
-  createAsyncThunk,
-  createSelector,
-  createSlice,
+    createAsyncThunk,
+    createSelector,
+    createSlice
 } from "@reduxjs/toolkit";
-import { APPLICATION_STATE } from "@shared/constants/applicationState";
 import {
-  addAccount as addAccountService,
-  importAccount as importAccountService,
-  makeAccountActive as makeAccountActiveService,
-  updateAccountName as updateAccountNameService,
-  confirmMnemonicPhrase as confirmMnemonicPhraseService,
-  createAccount as createAccountService,
-  fundAccount as fundAccountService,
-  recoverAccount as recoverAccountService,
-  loadAccount as loadAccountService,
-  confirmPassword as confirmPasswordService,
-  signOut as signOutService,
+    addAccount as addAccountService, confirmMnemonicPhrase as confirmMnemonicPhraseService, confirmPassword as confirmPasswordService, createAccount as createAccountService,
+    fundAccount as fundAccountService, importAccount as importAccountService, loadAccount as loadAccountService, makeAccountActive as makeAccountActiveService, recoverAccount as recoverAccountService, signOut as signOutService, updateAccountName as updateAccountNameService
 } from "@shared/api/internal";
 import { Account } from "@shared/api/types";
+import { APPLICATION_STATE } from "@shared/constants/applicationState";
 
 interface ErrorMessage {
   errorMessage: string;
@@ -328,7 +319,7 @@ const authSlice = createSlice({
     });
     builder.addCase(makeAccountActive.rejected, (state, action) => {
       const {
-        message = "Freighter was unable to switch to this account",
+        message = "AstraX was unable to switch to this account",
       } = action.error;
 
       return {
@@ -348,7 +339,7 @@ const authSlice = createSlice({
     });
     builder.addCase(updateAccountName.rejected, (state, action) => {
       const {
-        message = "Freighter was unable update this account's name",
+        message = "AstraX was unable update this account's name",
       } = action.error;
 
       return {
