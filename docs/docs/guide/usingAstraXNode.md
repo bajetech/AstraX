@@ -1,25 +1,27 @@
 ---
-id: usingFreighterBrowser
-title: Using AstraX in the browser
+id: usingFreighterNode
+title: Using AstraX in node.js
 ---
 
 We now have an extension installed on our machine and a library to interact with it. This library will provide you methods to send and receive data from a user's extension in your website or application.
 
 ### Importing
 
-First import the library in the `<head>` tag of your page.
+First import the whole library in a Node.js application
 
-- Install the packaged library via script tag using cdnjs, swapping in the desired version number for `{version}`
-
-_NOTE:_ You must use version `1.1.2` or above
-
-```html
-<head>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/astrax-api/{version}/index.min.js"></script>
-</head>
+```javascript
+import astraxApi from "@bajetech/astrax-api";
 ```
 
-This will expose a global variable called `window.astraxApi` that will contain our library.
+or import just the modules you require:
+
+```javascript
+import {
+  isConnected,
+  getPublicKey,
+  signTransaction,
+} from "@bajetech/astrax-api";
+```
 
 Now let's dig into what functionality is available to you:
 
@@ -30,7 +32,9 @@ Now let's dig into what functionality is available to you:
 This function is useful for determining if a user in your application has AstraX installed.
 
 ```javascript
-if (window.astraxApi.isConnected()) {
+import { isConnected } from "@bajetech/astrax-api";
+
+if (isConnected()) {
   alert("User has AstraX!");
 }
 ```
@@ -44,7 +48,13 @@ If a user has never interacted with your app before, this function will prompt t
 If the user has authorized your application previously, it will be on the extension's "Allow list", meaning the extension can immediately provide the public key without any user action.
 
 ```javascript
-if (window.astraxApi.isConnected()) {
+import {
+  isConnected,
+  getPublicKey,
+  signTransaction,
+} from "@bajetech/astrax-api";
+
+if (isConnected()) {
   alert("User has AstraX!");
 }
 
@@ -53,7 +63,7 @@ const retrievePublicKey = async () => {
   let error = "";
 
   try {
-    publicKey = await window.astraxApi.getPublicKey();
+    publicKey = await getPublicKey();
   } catch (e) {
     error = e;
   }
@@ -75,7 +85,13 @@ const result = retrievePublicKey();
 This function is useful for determining what network the user has configured AstraX to use. AstraX will be configured to either `PUBLIC` or `TESTNET`.
 
 ```javascript
-if (window.astraxApi.isConnected()) {
+import {
+  isConnected,
+  getNetwork,
+  signTransaction,
+} from "@bajetech/astrax-api";
+
+if (isConnected()) {
   alert("User has AstraX!");
 }
 
@@ -84,7 +100,7 @@ const retrieveNetwork = async () => {
   let error = "";
 
   try {
-    network = await window.astraxApi.getNetwork();
+    network = await getNetwork();
   } catch (e) {
     error = e;
   }
@@ -109,12 +125,18 @@ The user will need to provide their password if the extension does not currently
 
 _NOTE:_ The user must provide a valid transaction XDR string for the extension to properly sign.
 
-The second parameter is an optional string that you may pass to indicate what network you’re intending this transaction to be signed on. The parameter must be either `PUBLIC` or `TESTNET`. If you choose not to pass a param, astrax-api will default to `PUBLIC`.
+The second parameter is an optional string that you may pass to indicate what network you’re intending this transaction to be signed on. The parameter must be either `PUBLIC` or `TESTNET`. If you choose not to pass a param, freighter-api will default to `PUBLIC`.
 
 This is useful in the case that the user's AstraX is configured to the wrong network. AstraX will be able to throw a blocking error message communicating that you intended this transaction to be signed on a different network.
 
 ```javascript
-if (window.astraxApi.isConnected()) {
+import {
+  isConnected,
+  getPublicKey,
+  signTransaction,
+} from "@bajetech/astrax-api";
+
+if (isConnected()) {
   alert("User has AstraX!");
 }
 
@@ -123,7 +145,7 @@ const retrievePublicKey = async () => {
   let error = "";
 
   try {
-    publicKey = await window.astraxApi.getPublicKey();
+    publicKey = await getPublicKey();
   } catch (e) {
     error = e;
   }
@@ -142,7 +164,7 @@ const userSignTransaction = async (xdr: string, network: string) => {
   let error = "";
 
   try {
-    signedTransaction = await window.astraxApi.signTransaction(xdr, network);
+    signedTransaction = await signTransaction(xdr, network);
   } catch (e) {
     error = e;
   }
@@ -158,15 +180,17 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 ```
 
-astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `xdb-digitalbits-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
+astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Frontier using `xdb-digitalbits-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
 
 ```javascript
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
+
 const userSignTransaction = async (xdr: string, network: string) => {
   let signedTransaction = "";
   let error = "";
 
   try {
-    signedTransaction = await window.astraxApi.signTransaction(xdr, network);
+    signedTransaction = await signTransaction(xdr, network);
   } catch (e) {
     error = e;
   }
@@ -184,7 +208,7 @@ const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 
 const SERVER_URL = "https://frontier.testnet.digitalbits.io";
 
-const server = DigitalBitsSdk.Server(SERVER_URL);
+const server = new DigitalBitsSdk.Server(SERVER_URL);
 
 const transactionToSubmit = DigitalBitsSdk.TransactionBuilder.fromXDR(
   userSignedTransaction,
