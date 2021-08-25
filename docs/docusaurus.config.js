@@ -1,11 +1,11 @@
 module.exports = {
   title: "AstraX Documentation",
-  url: "https://docs.freighter.app",
+  url: "https://docs.astrax-api-docs.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   favicon: "./images/logo.png",
-  organizationName: "@stellar",
-  projectName: "freighterDocs",
+  organizationName: "@bajetech",
+  projectName: "astraxDocs",
   themeConfig: {
     navbar: {
       title: "AstraX Documentation",
@@ -15,7 +15,7 @@ module.exports = {
       },
       items: [
         {
-          href: "https://github.com/stellar/lyra/tree/master/docs",
+          href: "https://github.com/bajetech/AstraX/tree/main/docs",
           label: "GitHub",
           position: "left",
         },

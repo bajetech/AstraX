@@ -180,7 +180,7 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 ```
 
-astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `stellar-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
+astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `xdb-digitalbits-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
 
 ```javascript
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
