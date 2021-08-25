@@ -2,7 +2,7 @@
   "name": "@bajetech/astrax-api",
   "version": "1.0.0",
   "license": "Apache-2.0",
-  "author": "The DigitalBits Foundation <hello@digitalbits.io>",
+  "author": "BajeTech <hello@bajetech.com>",
   "description": "Utility functions to interact with AstraX extension",
   "repository": {
     "url": "git@github.com:BajeTech/AstraX",
