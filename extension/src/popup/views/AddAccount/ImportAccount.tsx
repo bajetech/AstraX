@@ -1,34 +1,29 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Formik } from "formik";
-import { bool as YupBool, object as YupObject, string as YupString } from "yup";
-
-import { ROUTES } from "popup/constants/routes";
-import { METRIC_NAMES } from "popup/constants/metricsNames";
-
-import { AppDispatch } from "popup/App";
-import { navigateTo } from "popup/helpers/navigate";
 import { emitMetric } from "helpers/metrics";
-
+import { AppDispatch } from "popup/App";
+import IconOrangeLock from "popup/assets/icon-orange-lock.svg";
 import { SubviewHeader, SubviewWrapper } from "popup/basics/AccountSubview";
 import {
-  ApiErrorMessage,
-  Error,
-  Form,
-  FormRow,
-  CheckboxField,
-  TextField,
-  SubmitButton,
+    ApiErrorMessage, CheckboxField, Error,
+    Form,
+    FormRow, SubmitButton, TextField
 } from "popup/basics/Forms";
-
-import {
-  clearApiError,
-  importAccount,
-  authErrorSelector,
-} from "popup/ducks/accountServices";
-
 import { WarningMessage } from "popup/components/WarningMessage";
-import IconOrangeLock from "popup/assets/icon-orange-lock.svg";
+import { METRIC_NAMES } from "popup/constants/metricsNames";
+import { ROUTES } from "popup/constants/routes";
+import {
+    authErrorSelector, clearApiError,
+    importAccount
+} from "popup/ducks/accountServices";
+import { navigateTo } from "popup/helpers/navigate";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { bool as YupBool, object as YupObject, string as YupString } from "yup";
+
+
+
+
+
 
 export const ImportAccount = () => {
   interface FormValues {
@@ -79,13 +74,13 @@ export const ImportAccount = () => {
         >
           <ul>
             <li>
-              Freighter <strong>can’t recover</strong> your imported secret key
+              AstraX <strong>can’t recover</strong> your imported secret key
               using your backup phrase. Storing your secret key is your
               reponsibility
             </li>
 
             <li>
-              Freighter <strong>will never ask</strong> for your secret key
+              AstraX <strong>will never ask</strong> for your secret key
               outside of the extension
             </li>
           </ul>
@@ -126,7 +121,7 @@ export const ImportAccount = () => {
               </FormRow>
               <FormRow>
                 <CheckboxField
-                  label="I’m aware Freighter can’t recover the imported  secret key"
+                  label="I’m aware AstraX can’t recover the imported  secret key"
                   name="authorization"
                 />
                 <Error name="authorization" />

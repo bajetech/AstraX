@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-
 import { HEADER_HEIGHT } from "constants/dimensions";
-import { ROUTES } from "popup/constants/routes";
-import { COLOR_PALETTE } from "popup/constants/styles";
-
-import { Header } from "popup/components/Header";
-import { FullscreenStyle } from "popup/components/FullscreenStyle";
-
 import CreateWalletIllo from "popup/assets/illo-create-wallet.svg";
 import ImportWalletIllo from "popup/assets/illo-import-wallet.svg";
+import { FullscreenStyle } from "popup/components/FullscreenStyle";
+import { Header } from "popup/components/Header";
+import { ROUTES } from "popup/constants/routes";
+import { COLOR_PALETTE } from "popup/constants/styles";
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+
+
 
 const BoxEl = styled.div`
   position: relative;
@@ -114,7 +114,7 @@ export const Welcome = () => (
       <RowScreenEl>
         <LargeHeadingEl>
           Welcome, <br />
-          are you new to <strong>Freighter?</strong>
+          are you new to <strong>AstraX?</strong>
         </LargeHeadingEl>
       </RowScreenEl>
       <RowScreenEl>

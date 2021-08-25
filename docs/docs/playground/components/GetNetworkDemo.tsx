@@ -1,5 +1,5 @@
+import { getNetwork } from "@bajetech/astrax-api";
 import React, { useState } from "react";
-import { getNetwork } from "@stellar/freighter-api";
 import { PlaygroundInput } from "./basics/inputs";
 
 export const GetNetworkDemo = () => {
@@ -21,7 +21,7 @@ export const GetNetworkDemo = () => {
   return (
     <section>
       <div>
-        What network is Freighter using?
+        What network is AstraX using?
         <PlaygroundInput readOnly value={networkResult} />
       </div>
       <button type="button" onClick={btnHandler}>
