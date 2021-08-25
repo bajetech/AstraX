@@ -31,5 +31,5 @@ or
 _NOTE:_ You must use version `1.1.2` or above
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/stellar-freighter-api/{version}/index.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/astrax-api/{version}/index.min.js"></script>
 ```

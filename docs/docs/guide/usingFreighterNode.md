@@ -10,7 +10,7 @@ We now have an extension installed on our machine and a library to interact with
 First import the whole library in a Node.js application
 
 ```javascript
-import freighterApi from "@bajetech/astrax-api";
+import astraxApi from "@bajetech/astrax-api";
 ```
 
 or import just the modules you require:
@@ -180,10 +180,10 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 ```
 
-freighter-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `stellar-sdk` (https://github.com/stellar/js-stellar-sdk):
+astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `stellar-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
 
 ```javascript
-import StellarSdk from "stellar-sdk";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
 
 const userSignTransaction = async (xdr: string, network: string) => {
   let signedTransaction = "";
@@ -206,11 +206,11 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 
-const SERVER_URL = "https://horizon-testnet.stellar.org";
+const SERVER_URL = "https://frontier.testnet.digitalbits.io";
 
-const server = new StellarSdk.Server(SERVER_URL);
+const server = new DigitalBitsSdk.Server(SERVER_URL);
 
-const transactionToSubmit = StellarSdk.TransactionBuilder.fromXDR(
+const transactionToSubmit = DigitalBitsSdk.TransactionBuilder.fromXDR(
   userSignedTransaction,
   SERVER_URL
 );
