@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signTransaction } from "@stellar/freighter-api";
+import { signTransaction } from "@bajetech/astrax-api";
 import { PlaygroundTextarea } from "./basics/inputs";
 
 export const SignTransactionDemo = () => {

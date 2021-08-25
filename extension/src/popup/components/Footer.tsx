@@ -1,16 +1,16 @@
-import React from "react";
-import styled from "styled-components";
-
-import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
-
-import { RetinaImg } from "popup/basics/Images";
-
 import accountViewerLogo from "popup/assets/logo-av.png";
 import accountViewerLogo2x from "popup/assets/logo-av@2x.png";
 import laboratoryLogo from "popup/assets/logo-laboratory.png";
 import laboratoryLogo2x from "popup/assets/logo-laboratory@2x.png";
 import stellarTermLogo from "popup/assets/logo-stellarterm.png";
 import stellarTermLogo2x from "popup/assets/logo-stellarterm@2x.png";
+import { RetinaImg } from "popup/basics/Images";
+import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
+import React from "react";
+import styled from "styled-components";
+
+
+
 
 const FooterEl = styled.footer`
   box-sizing: border-box;
@@ -43,7 +43,7 @@ const FooterListItemEl = styled.li`
 
 export const Footer = () => (
   <FooterEl>
-    <FooterHeaderEl>Use Freighter with</FooterHeaderEl>
+    <FooterHeaderEl>Use AstraX with</FooterHeaderEl>
     <FooterListEl>
       <FooterListItemEl>
         <a

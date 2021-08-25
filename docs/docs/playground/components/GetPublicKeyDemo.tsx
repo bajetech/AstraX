@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getPublicKey } from "@stellar/freighter-api";
+import { getPublicKey } from "@bajetech/astrax-api";
 import { PlaygroundInput } from "./basics/inputs";
 
 export const GetPublicKeyDemo = () => {

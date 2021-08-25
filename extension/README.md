@@ -1,4 +1,4 @@
-# Freighter Web Extension
+# AstraX Web Extension
 
 ## Get Started
 
@@ -34,7 +34,7 @@ To install on Chrome:
 4. Click `Load Unpacked` and it will open your file system.
 
 5. Navigate to this folder and click the `build` folder. Hit `Select`. You
-   should now see an icon for Freighter in Chrome.
+   should now see an icon for AstraX in Chrome.
 
 To install on Firefox:
 
@@ -43,7 +43,7 @@ To install on Firefox:
 2. Click `Load Temporary Add-On`
 
 3. Navigate to this folder and open the `build` folder and find `manifest.json`.
-   Hit `Select`. You should now see an icon for Freighter in Firefox
+   Hit `Select`. You should now see an icon for AstraX in Firefox
 
 ### Build the extension and use Pubnet
 
@@ -83,7 +83,7 @@ of these are located in the `src/` folder:
 
 3. The `content script` that allows external sites to send and receive messages
    to `background`. Using an event listener, it waits for an application to
-   attempt to communicate using `@stellar/freighter-api`(under the hood,
+   attempt to communicate using `@bajetech/astrax-api`(under the hood,
    `window.postMessage`). Once it picks up a message and determines that this
    from `freighter-api`, it sends the message onto `background`.
 

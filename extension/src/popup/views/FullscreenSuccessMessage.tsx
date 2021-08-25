@@ -1,23 +1,23 @@
-import React from "react";
-import styled from "styled-components";
-import { useLocation } from "react-router-dom";
-
 import { emitMetric } from "helpers/metrics";
-
-import { ROUTES } from "popup/constants/routes";
-import { METRIC_NAMES } from "popup/constants/metricsNames";
-import {
-  COLOR_PALETTE,
-  FONT_WEIGHT,
-  ROUNDED_CORNERS,
-} from "popup/constants/styles";
-
-import { FullscreenStyle } from "popup/components/FullscreenStyle";
-import { Header } from "popup/components/Header";
-import { SubmitButton } from "popup/basics/Forms";
-
 import WhiteLockIcon from "popup/assets/icon-white-lock.svg";
 import SuccessIllo from "popup/assets/illo-success-screen.svg";
+import { SubmitButton } from "popup/basics/Forms";
+import { FullscreenStyle } from "popup/components/FullscreenStyle";
+import { Header } from "popup/components/Header";
+import { METRIC_NAMES } from "popup/constants/metricsNames";
+import { ROUTES } from "popup/constants/routes";
+import {
+    COLOR_PALETTE,
+    FONT_WEIGHT,
+    ROUNDED_CORNERS
+} from "popup/constants/styles";
+import React from "react";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
+
+
+
+
 
 const HeaderEl = styled.h1`
   font-weight: 200;
@@ -114,17 +114,17 @@ const MnemonicPhraseConfirmedMessage = () => (
       </MessageSubheaderEl>
       <MessageListEl>
         <li>
-          Freighter will <strong>never ask for your backup phrase</strong>{" "}
+          AstraX will <strong>never ask for your backup phrase</strong>{" "}
           unless you're actively importing your account using the browser
           extension. We will never ask for your backup phrase on an external
           website.
         </li>
         <li>
-          Always check the domain of websites you're using Freighter with to
+          Always check the domain of websites you're using AstraX with to
           make sure you’re interacting with the authentic site.
         </li>
         <li>
-          Freighter cannot recover your account if you lose your backup phrase,
+          AstraX cannot recover your account if you lose your backup phrase,
           so keep it safe and secure.
         </li>
       </MessageListEl>
@@ -137,7 +137,7 @@ const RecoverAccountSuccessMessage = () => (
     <p>You successfully imported your account.</p>
     <p>
       <strong>
-        Check your account details by clicking on the Freighter icon on your
+        Check your account details by clicking on the AstraX icon on your
         browser.
       </strong>
     </p>

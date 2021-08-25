@@ -74,4 +74,4 @@
 
 - Initial public release
 - UI cleanup
-- Freighter name change
+- AstraX name change

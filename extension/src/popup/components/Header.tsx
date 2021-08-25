@@ -1,13 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import { useSelector } from "react-redux";
-
 import { HEADER_HEIGHT } from "constants/dimensions";
-import { FONT_FAMILY, COLOR_PALETTE } from "popup/constants/styles";
-
-import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
-
 import FreighterLogoLockup from "popup/assets/logo-lockup-freighter.svg";
+import { COLOR_PALETTE, FONT_FAMILY } from "popup/constants/styles";
+import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
+import React from "react";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+
+
+
 
 const HeaderEl = styled.header`
   background: ${COLOR_PALETTE.primaryGradient};
@@ -68,7 +68,7 @@ export const Header = ({ children, className, ...props }: HeaderProps) => {
   );
   return (
     <HeaderEl className={className} {...props}>
-      <FreighterLogoEl alt="Freighter logo" src={FreighterLogoLockup} />
+      <FreighterLogoEl alt="AstraX logo" src={FreighterLogoLockup} />
       <RightSectionEl>
         {children}
         <NetworkWrapperEl>

@@ -1,6 +1,6 @@
 ---
 id: usingFreighterNode
-title: Using Freighter in node.js
+title: Using AstraX in node.js
 ---
 
 We now have an extension installed on our machine and a library to interact with it. This library will provide you methods to send and receive data from a user's extension in your website or application.
@@ -10,7 +10,7 @@ We now have an extension installed on our machine and a library to interact with
 First import the whole library in a Node.js application
 
 ```javascript
-import freighterApi from "@stellar/freighter-api";
+import astraxApi from "@bajetech/astrax-api";
 ```
 
 or import just the modules you require:
@@ -20,7 +20,7 @@ import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 ```
 
 Now let's dig into what functionality is available to you:
@@ -29,13 +29,13 @@ Now let's dig into what functionality is available to you:
 
 #### `isConnected() -> <boolean>`
 
-This function is useful for determining if a user in your application has Freighter installed.
+This function is useful for determining if a user in your application has AstraX installed.
 
 ```javascript
-import { isConnected } from "@stellar/freighter-api";
+import { isConnected } from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 ```
 
@@ -52,10 +52,10 @@ import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrievePublicKey = async () => {
@@ -82,17 +82,17 @@ const result = retrievePublicKey();
 
 #### `getNetwork() -> <Promise<"PUBLIC" | "TESTNET">>`
 
-This function is useful for determining what network the user has configured Freighter to use. Freighter will be configured to either `PUBLIC` or `TESTNET`.
+This function is useful for determining what network the user has configured AstraX to use. AstraX will be configured to either `PUBLIC` or `TESTNET`.
 
 ```javascript
 import {
   isConnected,
   getNetwork,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrieveNetwork = async () => {
@@ -127,17 +127,17 @@ _NOTE:_ The user must provide a valid transaction XDR string for the extension t
 
 The second parameter is an optional string that you may pass to indicate what network you’re intending this transaction to be signed on. The parameter must be either `PUBLIC` or `TESTNET`. If you choose not to pass a param, freighter-api will default to `PUBLIC`.
 
-This is useful in the case that the user's Freighter is configured to the wrong network. Freighter will be able to throw a blocking error message communicating that you intended this transaction to be signed on a different network.
+This is useful in the case that the user's AstraX is configured to the wrong network. AstraX will be able to throw a blocking error message communicating that you intended this transaction to be signed on a different network.
 
 ```javascript
 import {
   isConnected,
   getPublicKey,
   signTransaction,
-} from "@stellar/freighter-api";
+} from "@bajetech/astrax-api";
 
 if (isConnected()) {
-  alert("User has Freighter!");
+  alert("User has AstraX!");
 }
 
 const retrievePublicKey = async () => {
@@ -180,10 +180,10 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 ```
 
-freighter-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Horizon using `stellar-sdk` (https://github.com/stellar/js-stellar-sdk):
+astrax-api will return a signed transaction xdr. Below is an example of how you might submit this signed transaction to Frontier using `xdb-digitalbits-sdk` (https://github.com/xdbfoundation/xdb-digitalbits-sdk):
 
 ```javascript
-import StellarSdk from "stellar-sdk";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
 
 const userSignTransaction = async (xdr: string, network: string) => {
   let signedTransaction = "";
@@ -206,11 +206,11 @@ const xdr = ""; // replace this with an xdr string of the transaction you want t
 
 const userSignedTransaction = userSignTransaction(xdr, "TESTNET");
 
-const SERVER_URL = "https://horizon-testnet.stellar.org";
+const SERVER_URL = "https://frontier.testnet.digitalbits.io";
 
-const server = new StellarSdk.Server(SERVER_URL);
+const server = new DigitalBitsSdk.Server(SERVER_URL);
 
-const transactionToSubmit = StellarSdk.TransactionBuilder.fromXDR(
+const transactionToSubmit = DigitalBitsSdk.TransactionBuilder.fromXDR(
   userSignedTransaction,
   SERVER_URL
 );

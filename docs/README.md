@@ -1,10 +1,10 @@
-# Freighter Docs
+# AstraX Docs
 
 This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 ### Local Development
 
-First build `@stellar/freighter-api` (a dependency of this project) by cd'ing to `@stellar/freighter-api` and running `yarn build`.
+First build `@bajetech/astrax-api` (a dependency of this project) by cd'ing to `@bajetech/astrax-api` and running `yarn build`.
 
 Then, come back to this directory and run:
 
