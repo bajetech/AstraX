@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "license": "Apache-2.0",
   "author": "BajeTech <hello@bajetech.com>",
-  "description": "Utility functions to interact with AstraX extension",
+  "description": "Utility functions to interact with AstraX web extension",
+  "keywords": [
+    "blockchain",
+    "digitalbits",
+    "xdb",
+    "wallet"
+  ],
   "repository": {
-    "url": "git@github.com:BajeTech/AstraX",
+    "url": "git@github.com:bajetech/AstraX",
     "type": "git"
   },
   "main": "build/index.min.js",
