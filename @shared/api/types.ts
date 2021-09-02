@@ -1,5 +1,5 @@
 import { Frontier } from "xdb-digitalbits-sdk";
-import { Types } from "@stellar/wallet-sdk";
+import { Types } from "@bajetech/digitalbits-wallet-sdk";
 
 import { SERVICE_TYPES, EXTERNAL_SERVICE_TYPES } from "../constants/services";
 import { APPLICATION_STATE } from "../constants/applicationState";

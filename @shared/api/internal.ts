@@ -1,5 +1,5 @@
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
-import { DataProvider } from "@stellar/wallet-sdk";
+import { DataProvider } from "@bajetech/digitalbits-wallet-sdk";
 import {
   Account,
   AccountDetailsInterface,

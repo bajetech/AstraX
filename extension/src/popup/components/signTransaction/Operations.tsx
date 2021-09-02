@@ -11,7 +11,7 @@ import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
 
 import { FlaggedKeys } from "types/transactions";
 
-import { truncatedPublicKey } from "helpers/stellar";
+import { truncatedPublicKey } from "helpers/digitalbits";
 
 import { IconWithLabel, TransactionList } from "popup/basics/TransactionList";
 

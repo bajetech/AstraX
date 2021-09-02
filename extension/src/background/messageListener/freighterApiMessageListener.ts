@@ -1,4 +1,4 @@
-import StellarSdk from "stellar-sdk";
+import XdbDigitalbitsSdk from "xdb-digitalbits-sdk";
 import { browser, Runtime } from "webextension-polyfill-ts";
 
 import { ExternalRequest as Request } from "@shared/api/types";
@@ -85,9 +85,9 @@ export const freighterApiMessageListener = (
     } = request;
     const isTestnet = getIsTestnet();
     const { networkUrl } = getNetworkDetails(isTestnet);
-    const transaction = StellarSdk.TransactionBuilder.fromXDR(
+    const transaction = XdbDigitalbitsSdk.TransactionBuilder.fromXDR(
       transactionXdr,
-      StellarSdk.Networks[network],
+      XdbDigitalbitsSdk.Networks[network],
     );
 
     const { tab, url: tabUrl = "" } = sender;
@@ -141,7 +141,7 @@ export const freighterApiMessageListener = (
       });
     }
 
-    const server = new StellarSdk.Server(networkUrl);
+    const server = new XdbDigitalbitsSdk.Server(networkUrl);
     try {
       await server.checkMemoRequired(transaction);
     } catch (e) {
