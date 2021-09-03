@@ -2,7 +2,7 @@ import {
   KeyManager,
   KeyManagerPlugins,
   KeyType,
-} from "@bajetech/digitalbits-wallet-sdk";
+} from "@stellar/wallet-sdk";
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
 // @ts-ignore
 import { fromMnemonic, generateMnemonic } from "stellar-hd-wallet";
