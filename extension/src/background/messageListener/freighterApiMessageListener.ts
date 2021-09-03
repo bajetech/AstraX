@@ -141,7 +141,7 @@ export const freighterApiMessageListener = (
       });
     }
 
-    const server = new XdbDigitalbitsSdk.Server(networkUrl);
+    const server = new DigitalBitsSdk.Server(networkUrl);
     try {
       await server.checkMemoRequired(transaction);
     } catch (e) {
