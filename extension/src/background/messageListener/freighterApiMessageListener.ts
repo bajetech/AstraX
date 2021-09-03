@@ -85,7 +85,7 @@ export const freighterApiMessageListener = (
     } = request;
     const isTestnet = getIsTestnet();
     const { networkUrl } = getNetworkDetails(isTestnet);
-    const transaction = XdbDigitalbitsSdk.TransactionBuilder.fromXDR(
+    const transaction = DigitalBitsSdk.TransactionBuilder.fromXDR(
       transactionXdr,
       XdbDigitalbitsSdk.Networks[network],
     );
