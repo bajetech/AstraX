@@ -518,7 +518,7 @@ export const popupMessageListener = (request: Request) => {
     const privateKey = privateKeySelector(store.getState());
 
     if (privateKey.length) {
-      const sourceKeys = XdbDigitalbitsSdk.Keypair.fromSecret(privateKey);
+      const sourceKeys = DigitalBitsSdk.Keypair.fromSecret(privateKey);
 
       let response;
 
