@@ -1,5 +1,9 @@
-import { KeyManager, KeyManagerPlugins, KeyType } from "@stellar/wallet-sdk";
-import StellarSdk from "stellar-sdk";
+import {
+  KeyManager,
+  KeyManagerPlugins,
+  KeyType,
+} from "@stellar/wallet-sdk";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
 // @ts-ignore
 import { fromMnemonic, generateMnemonic } from "stellar-hd-wallet";
 
@@ -232,7 +236,7 @@ export const popupMessageListener = (request: Request) => {
 
     try {
       await _unlockKeystore({ password });
-      sourceKeys = StellarSdk.Keypair.fromSecret(privateKey);
+      sourceKeys = DigitalBitsSdk.Keypair.fromSecret(privateKey);
     } catch (e) {
       console.error(e);
       return { error: "Please enter a valid secret key/password combination" };
@@ -514,7 +518,7 @@ export const popupMessageListener = (request: Request) => {
     const privateKey = privateKeySelector(store.getState());
 
     if (privateKey.length) {
-      const sourceKeys = StellarSdk.Keypair.fromSecret(privateKey);
+      const sourceKeys = DigitalBitsSdk.Keypair.fromSecret(privateKey);
 
       let response;
 

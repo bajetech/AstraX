@@ -6,7 +6,7 @@ import { COLOR_PALETTE } from "popup/constants/styles";
 
 import { BasicButton } from "popup/basics/Buttons";
 
-import { truncatedPublicKey } from "helpers/stellar";
+import { truncatedPublicKey } from "helpers/digitalbits";
 
 import { makeAccountActive } from "popup/ducks/accountServices";
 

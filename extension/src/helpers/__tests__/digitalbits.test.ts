@@ -1,4 +1,4 @@
-import { truncatedPublicKey } from "../stellar";
+import { truncatedPublicKey } from "../digitalbits";
 
 describe("truncatedPublicKey", () => {
   it("truncates keys", () => {
