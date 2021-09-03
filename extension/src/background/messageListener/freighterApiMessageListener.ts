@@ -1,4 +1,4 @@
-import XdbDigitalbitsSdk from "xdb-digitalbits-sdk";
+import DigitalBitsSdk from "xdb-digitalbits-sdk";
 import { browser, Runtime } from "webextension-polyfill-ts";
 
 import { ExternalRequest as Request } from "@shared/api/types";
