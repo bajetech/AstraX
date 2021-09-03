@@ -87,7 +87,7 @@ export const freighterApiMessageListener = (
     const { networkUrl } = getNetworkDetails(isTestnet);
     const transaction = DigitalBitsSdk.TransactionBuilder.fromXDR(
       transactionXdr,
-      XdbDigitalbitsSdk.Networks[network],
+      DigitalBitsSdk.Networks[network],
     );
 
     const { tab, url: tabUrl = "" } = sender;
