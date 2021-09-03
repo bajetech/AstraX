@@ -236,7 +236,7 @@ export const popupMessageListener = (request: Request) => {
 
     try {
       await _unlockKeystore({ password });
-      sourceKeys = XdbDigitalbitsSdk.Keypair.fromSecret(privateKey);
+      sourceKeys = DigitalBitsSdk.Keypair.fromSecret(privateKey);
     } catch (e) {
       console.error(e);
       return { error: "Please enter a valid secret key/password combination" };
