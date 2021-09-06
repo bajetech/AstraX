@@ -1,6 +1,6 @@
-import { submitTransaction } from "@shared/api/external";
+import { submitTransaction } from "./utils/api/external";
 
 export const signTransaction = (
   transactionXdr: string,
-  network?: "PUBLIC" | "TESTNET"
+  network?: "PUBLIC" | "TESTNET",
 ) => submitTransaction(transactionXdr, network);

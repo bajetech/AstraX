@@ -1,14 +1,18 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "@stellar/tsconfig",
   "compilerOptions": {
+    "importHelpers": true,
+    "target": "ES2019",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "sourceRoot": "./src",
     "baseUrl": "./src",
     "declaration": true,
     "declarationDir": "build/",
-    "outDir": "build/",
-    "paths": {
-      "@shared/*": ["../../../@shared/*"]
-    }
+    "outDir": "build/"
   },
   "include": ["src"],
   "exclude": ["build", "node_modules"]

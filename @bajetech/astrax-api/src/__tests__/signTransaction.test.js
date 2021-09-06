@@ -1,5 +1,5 @@
-import * as apiExternal from "@shared/api/external";
-import { NETWORKS } from "@shared/constants/digitalbits";
+import * as apiExternal from "../utils/api/external";
+import { NETWORKS } from "../utils/constants/digitalbits";
 import { signTransaction } from "../signTransaction";
 
 describe("signTransaction", () => {
@@ -18,7 +18,7 @@ describe("signTransaction", () => {
   });
   it("throws a wrong network error", () => {
     expect(signTransaction("s", "s")).toThrowError(
-      `Network must be ${NETWORKS.PUBLIC} or ${NETWORKS.TESTNET}`
+      `Network must be ${NETWORKS.PUBLIC} or ${NETWORKS.TESTNET}`,
     );
   });
 });
