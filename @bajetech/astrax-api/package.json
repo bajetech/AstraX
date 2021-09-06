@@ -1,11 +1,18 @@
 {
   "name": "@bajetech/astrax-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "author": "BajeTech <hello@bajetech.com>",
-  "description": "Utility functions to interact with AstraX extension",
+  "description": "Utility functions to interact with AstraX web extension",
+  "prettier": "@stellar/prettier-config",
+  "keywords": [
+    "blockchain",
+    "digitalbits",
+    "xdb",
+    "wallet"
+  ],
   "repository": {
-    "url": "git@github.com:BajeTech/AstraX",
+    "url": "git@github.com:bajetech/AstraX",
     "type": "git"
   },
   "main": "build/index.min.js",
@@ -15,5 +22,13 @@
     "start": "webpack --config webpack.dev.js --watch --mode development"
   },
   "types": "build/@bajetech/astrax-api/src/index.d.ts",
-  "dependencies": {}
+  "dependencies": {
+    "@stellar/prettier-config": "^1.0.1",
+    "@stellar/wallet-sdk": "^0.5.0-rc.0",
+    "@types/webextension-polyfill": "^0.8.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.4.2",
+    "webextension-polyfill": "^0.8.0",
+    "xdb-digitalbits-sdk": "^8.2.2"
+  }
 }

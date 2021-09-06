@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { COLOR_PALETTE } from "popup/constants/styles";
 
-import { truncatedPublicKey } from "helpers/stellar";
+import { truncatedPublicKey } from "helpers/digitalbits";
 
 import { IdenticonImg } from "./IdenticonImg";
 

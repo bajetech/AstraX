@@ -2,7 +2,7 @@ import React from "react";
 
 import { IconWithLabel, TransactionList } from "popup/basics/TransactionList";
 
-import { stroopToXlm } from "helpers/stellar";
+import { stroopToXlm } from "helpers/digitalbits";
 
 import { KeyIdenticon } from "popup/components/identicons/KeyIdenticon";
 

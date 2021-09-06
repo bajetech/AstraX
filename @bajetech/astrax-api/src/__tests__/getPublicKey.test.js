@@ -1,4 +1,4 @@
-import * as apiExternal from "@shared/api/external";
+import * as apiExternal from "../utils/api/external";
 import { getPublicKey } from "../getPublicKey";
 
 describe("getPublicKey", () => {

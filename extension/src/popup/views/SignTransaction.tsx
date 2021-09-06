@@ -1,6 +1,6 @@
 import { TRANSACTION_WARNING } from "constants/transaction";
 import { emitMetric } from "helpers/metrics";
-import { getTransactionInfo } from "helpers/stellar";
+import { getTransactionInfo } from "helpers/digitalbits";
 import { Button } from "popup/basics/Buttons";
 import { ButtonContainer, SubmitButton } from "popup/basics/Modal";
 import { Header } from "popup/components/Header";
@@ -12,9 +12,9 @@ import { FirstTimeWarningMessage } from "popup/components/warningMessages/FirstT
 import { FlaggedWarningMessage } from "popup/components/warningMessages/FlaggedWarningMessage";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 import {
-    COLOR_PALETTE,
-    FONT_WEIGHT,
-    ROUNDED_CORNERS
+  COLOR_PALETTE,
+  FONT_WEIGHT,
+  ROUNDED_CORNERS,
 } from "popup/constants/styles";
 import { rejectTransaction, signTransaction } from "popup/ducks/access";
 import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
@@ -23,12 +23,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-
-
-
-
-
-
 
 const El = styled.div`
   padding: 1.5rem 1.875rem;

@@ -1,7 +1,7 @@
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 
 import { registerHandler, emitMetric } from "helpers/metrics";
-import { getTransactionInfo } from "helpers/stellar";
+import { getTransactionInfo } from "helpers/digitalbits";
 import { parsedSearchParam, getUrlHostname } from "helpers/urls";
 
 import { navigate } from "popup/ducks/views";
