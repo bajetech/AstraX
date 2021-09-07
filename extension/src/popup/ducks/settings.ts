@@ -9,7 +9,7 @@ import {
   saveSettings as saveSettingsService,
   loadSettings as loadSettingsService,
 } from "@shared/api/internal";
-import { NetworkDetails } from "@shared/helpers/stellar";
+import { NetworkDetails } from "@shared/helpers/digitalbits";
 
 import { Settings } from "@shared/api/types";
 

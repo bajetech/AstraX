@@ -7,7 +7,7 @@ import { BasicButton } from "popup/basics/Buttons";
 
 import { COLOR_PALETTE } from "popup/constants/styles";
 import { OPERATION_TYPES } from "constants/transaction";
-import { HorizonOperation } from "@shared/api/types";
+import { FrontierOperation } from "@shared/api/types";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 
 import { emitMetric } from "helpers/metrics";
@@ -115,7 +115,7 @@ const HistoryItem = ({
   publicKey,
   url,
 }: {
-  operation: HorizonOperation;
+  operation: FrontierOperation;
   publicKey: string;
   url: string;
 }) => {
@@ -177,7 +177,7 @@ export const AccountHistory = ({
   operations,
 }: {
   publicKey: string;
-  operations: Array<HorizonOperation>;
+  operations: Array<FrontierOperation>;
 }) => {
   const { isTestnet } = useSelector(settingsNetworkDetailsSelector);
 
@@ -187,7 +187,7 @@ export const AccountHistory = ({
   return (
     <>
       <HistoryListEl>
-        {operations.map((operation: HorizonOperation) => (
+        {operations.map((operation: FrontierOperation) => (
           <HistoryItem
             key={operation.id}
             operation={operation}
