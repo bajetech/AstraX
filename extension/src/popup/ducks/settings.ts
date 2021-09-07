@@ -63,7 +63,7 @@ export const saveSettings = createAsyncThunk<
         isMemoValidationEnabled,
         isSafetyValidationEnabled,
       });
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       return thunkApi.rejectWithValue({
         errorMessage: e.message,

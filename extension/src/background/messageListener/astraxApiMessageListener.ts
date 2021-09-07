@@ -144,7 +144,7 @@ export const astraxApiMessageListener = (
     const server = new DigitalBitsSdk.Server(networkUrl);
     try {
       await server.checkMemoRequired(transaction);
-    } catch (e) {
+    } catch (e: any) {
       flaggedKeys[e.accountId] = {
         ...flaggedKeys[e.accountId],
         tags: [TRANSACTION_WARNING.memoRequired],

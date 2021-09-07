@@ -1,11 +1,20 @@
 import {
-    createAsyncThunk,
-    createSelector,
-    createSlice
+  createAsyncThunk,
+  createSelector,
+  createSlice,
 } from "@reduxjs/toolkit";
 import {
-    addAccount as addAccountService, confirmMnemonicPhrase as confirmMnemonicPhraseService, confirmPassword as confirmPasswordService, createAccount as createAccountService,
-    fundAccount as fundAccountService, importAccount as importAccountService, loadAccount as loadAccountService, makeAccountActive as makeAccountActiveService, recoverAccount as recoverAccountService, signOut as signOutService, updateAccountName as updateAccountNameService
+  addAccount as addAccountService,
+  confirmMnemonicPhrase as confirmMnemonicPhraseService,
+  confirmPassword as confirmPasswordService,
+  createAccount as createAccountService,
+  fundAccount as fundAccountService,
+  importAccount as importAccountService,
+  loadAccount as loadAccountService,
+  makeAccountActive as makeAccountActiveService,
+  recoverAccount as recoverAccountService,
+  signOut as signOutService,
+  updateAccountName as updateAccountNameService,
 } from "@shared/api/internal";
 import { Account } from "@shared/api/types";
 import { APPLICATION_STATE } from "@shared/constants/applicationState";
@@ -23,7 +32,7 @@ export const createAccount = createAsyncThunk<
 
   try {
     res = await createAccountService(password);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed when creating an account: ", e.message);
     return thunkApi.rejectWithValue({
       errorMessage: e.message,
@@ -37,7 +46,7 @@ export const fundAccount = createAsyncThunk(
   async (publicKey: string) => {
     try {
       await fundAccountService(publicKey);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Failed when funding an account: ", e.message);
     }
   },
@@ -52,7 +61,7 @@ export const addAccount = createAsyncThunk<
 
   try {
     res = await addAccountService(password);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed when creating an account: ", e.message);
     return thunkApi.rejectWithValue({
       errorMessage: e.message,
@@ -70,7 +79,7 @@ export const importAccount = createAsyncThunk<
 
   try {
     res = await importAccountService(password, privateKey);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed when importing an account: ", e);
     return thunkApi.rejectWithValue({
       errorMessage: e.message,
@@ -101,7 +110,7 @@ export const recoverAccount = createAsyncThunk<
 
   try {
     res = await recoverAccountService(password, mnemonicPhrase);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed when recovering an account: ", e.message);
     return thunkApi.rejectWithValue({
       errorMessage: e.message,
@@ -131,7 +140,7 @@ export const confirmMnemonicPhrase = createAsyncThunk<
     };
     try {
       res = await confirmMnemonicPhraseService(phrase);
-    } catch (e) {
+    } catch (e: any) {
       console.error("Failed when confirming Mnemonic Phrase: ", e.message);
       return thunkApi.rejectWithValue({
         applicationState: res.applicationState,
@@ -174,7 +183,7 @@ export const confirmPassword = createAsyncThunk<
   };
   try {
     res = await confirmPasswordService(phrase);
-  } catch (e) {
+  } catch (e: any) {
     console.error("Failed when confirming a password: ", e.message);
     return thunkApi.rejectWithValue({
       errorMessage: e.message,
@@ -204,7 +213,7 @@ export const signOut = createAsyncThunk<
   };
   try {
     res = await signOutService();
-  } catch (e) {
+  } catch (e: any) {
     console.error(e);
   }
 
