@@ -1,5 +1,5 @@
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
-import { browser, Runtime } from "webextension-polyfill-ts";
+import browser, { Runtime } from "webextension-polyfill";
 
 import { ExternalRequest as Request } from "@shared/api/types";
 import { MessageResponder } from "background/types";
@@ -9,7 +9,7 @@ import { EXTERNAL_SERVICE_TYPES } from "@shared/constants/services";
 import {
   getNetworkDetails,
   MAINNET_NETWORK_DETAILS,
-} from "@shared/helpers/stellar";
+} from "@shared/helpers/digitalbits";
 import { STELLAR_DIRECTORY_URL } from "background/constants/apiUrls";
 import { POPUP_WIDTH } from "constants/dimensions";
 import { ALLOWLIST_ID } from "constants/localStorageTypes";
@@ -41,7 +41,7 @@ const WINDOW_SETTINGS: WINDOW_PARAMS = {
   height: 667,
 };
 
-export const freighterApiMessageListener = (
+export const astraxApiMessageListener = (
   request: Request,
   sender: Runtime.MessageSender,
 ) => {

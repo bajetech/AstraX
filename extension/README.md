@@ -2,11 +2,11 @@
 
 ## Get Started
 
-This project builds a web extension
+This project builds a web extension.
 
 ### Build the extension and install it on your machine
 
-We will compile the code for the extension and that load this local instance
+We will compile the code for the extension and then load this local instance
 into your browser. NOTE: This command will build the extension on Testnet for
 local testing.
 
@@ -27,9 +27,9 @@ To install on Chrome:
 
 1. In Chrome, navigate to `chrome://extensions/`.
 
-2. Toggle `Developer mode` to the ON position in the top right corner
+2. Toggle `Developer mode` to the ON position in the top right corner.
 
-3. You will now see a button in the top left titled `Load Unpacked`
+3. You will now see a button in the top left titled `Load Unpacked`.
 
 4. Click `Load Unpacked` and it will open your file system.
 
@@ -43,12 +43,12 @@ To install on Firefox:
 2. Click `Load Temporary Add-On`
 
 3. Navigate to this folder and open the `build` folder and find `manifest.json`.
-   Hit `Select`. You should now see an icon for AstraX in Firefox
+   Hit `Select`. You should now see an icon for AstraX in Firefox.
 
-### Build the extension and use Pubnet
+### Build the extension and use Mainnet
 
 When working locally, you will generally want to run the extension on Testnet.
-But when we build for the app store, we will want the extension to use Pubnet.
+But when we build for the app store, we will want the extension to use Mainnet.
 In order to do that, run
 
 ```
@@ -84,8 +84,8 @@ of these are located in the `src/` folder:
 3. The `content script` that allows external sites to send and receive messages
    to `background`. Using an event listener, it waits for an application to
    attempt to communicate using `@bajetech/astrax-api`(under the hood,
-   `window.postMessage`). Once it picks up a message and determines that this
-   from `freighter-api`, it sends the message onto `background`.
+   `window.postMessage`). Once it picks up a message and determines that this is
+   from `astrax-api`, it sends the message onto `background`.
 
 ### Create a dev environment for the Popup and Playground to run in
 

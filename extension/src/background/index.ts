@@ -5,7 +5,7 @@ import {
 } from "@shared/constants/services";
 
 import { popupMessageListener } from "./messageListener/popupMessageListener";
-import { freighterApiMessageListener } from "./messageListener/freighterApiMessageListener";
+import { astraxApiMessageListener } from "./messageListener/astraxApiMessageListener";
 
 export const initMessageListener = () => {
   // returning true is very important in these message listeners. It tells the listener that the callback
@@ -18,7 +18,7 @@ export const initMessageListener = () => {
       res = await popupMessageListener(request);
     }
     if (Object.values(EXTERNAL_SERVICE_TYPES).includes(request.type)) {
-      res = await freighterApiMessageListener(request, sender);
+      res = await astraxApiMessageListener(request, sender);
     }
 
     return res;

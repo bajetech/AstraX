@@ -99,7 +99,7 @@ export const DisplayMnemonicPhrase = ({
           data-testid="download"
           onClick={() => {
             download({
-              filename: "freighterMnemonicPhrase.txt",
+              filename: "astraxMnemonicPhrase.txt",
               content: mnemonicPhrase,
             });
             emitMetric(METRIC_NAMES.accountCreatorMnemonicDownloadPhrase);

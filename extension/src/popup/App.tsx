@@ -71,7 +71,7 @@ export type AppDispatch = typeof store.dispatch;
 if (process.env.SENTRY_KEY) {
   Sentry.init({
     dsn: process.env.SENTRY_KEY,
-    release: `freighter@${process.env.npm_package_version}`,
+    release: `astrax@${process.env.npm_package_version}`,
     integrations: [new Integrations.BrowserTracing()],
     tracesSampleRate: 1.0,
   });

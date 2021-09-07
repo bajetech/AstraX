@@ -27,7 +27,7 @@ interface ReduxState {
  *
  * const { stellarAccount } = useRedux(["stellarAccount"]);
  *
- * @param {string[]} stateProps An array of prop names to get from the state.
+ * @param {string[]} propsOrFirstProp An array of prop names to get from the state.
  * @returns {object} An object map of those prop names to their values.
  */
 export function useRedux<T = {}>(

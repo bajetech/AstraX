@@ -152,7 +152,7 @@ export const Menu = () => {
               <a
                 rel="noreferrer"
                 target="_blank"
-                href="https://stellarform.typeform.com/to/r4FiNpX1"
+                href="https://zpezxd0mv2j.typeform.com/to/xxikD0hy"
               >
                 Leave Feedback
               </a>
