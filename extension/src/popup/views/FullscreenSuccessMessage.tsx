@@ -58,7 +58,7 @@ const IlloContainerEl = styled.div`
 
 const MessageEl = styled.div`
   border-radius: ${ROUNDED_CORNERS};
-  background-color: ${COLOR_PALETTE.primaryGradient};
+  background: ${COLOR_PALETTE.primaryGradient};
   padding: 1.75rem 1.5rem;
   text-align: left;
   font-size: 0.93rem;
