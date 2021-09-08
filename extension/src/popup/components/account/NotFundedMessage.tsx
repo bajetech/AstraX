@@ -70,22 +70,22 @@ export const NotFundedMessage = ({
     <>
       <NotFundedWrapperEl>
         <NotFundedHeaderEl>
-          This Stellar address is not funded
+          This DigitalBits address is not funded
         </NotFundedHeaderEl>
         <NotFundedCopyEl>
-          To create this account, fund it with a minimum of 1 XLM.
+          To create this account, fund it with a minimum of 1 XDB.
         </NotFundedCopyEl>
 
         {isTestnet ? (
           <FriendBotCopyEl>
             You can fund this account on the test network using the Friendbot
-            tool. Friendbot is a horizon API endpoint that will fund an account
-            with 10,000 lumens on the test network.
+            tool. Friendbot is a Frontier API endpoint that will fund an account
+            with 10,000 XDB on the test network.
           </FriendBotCopyEl>
         ) : null}
         <NotFundedCopyEl>
           <a
-            href="https://developers.stellar.org/docs/tutorials/create-account/#create-account"
+            href="https://developer.digitalbits.io/guides/get-started/create-account.html"
             rel="noreferrer"
             target="_blank"
           >
@@ -95,11 +95,11 @@ export const NotFundedMessage = ({
         {isTestnet ? null : (
           <NotFundedCopyEl>
             <a
-              href="https://www.stellar.org/lumens/exchanges"
+              href="https://cryptobuyingtips.com/guides/how-to-buy-digitalbits-xdb"
               rel="noreferrer"
               target="_blank"
             >
-              See where you can buy lumens
+              See how and where you can buy XDB
             </a>
           </NotFundedCopyEl>
         )}
