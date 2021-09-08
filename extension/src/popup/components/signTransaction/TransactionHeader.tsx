@@ -2,7 +2,7 @@ import React from "react";
 
 import { IconWithLabel, TransactionList } from "popup/basics/TransactionList";
 
-import { stroopToXlm } from "helpers/digitalbits";
+import { stroopToXdb } from "helpers/digitalbits";
 
 import { KeyIdenticon } from "popup/components/identicons/KeyIdenticon";
 
@@ -58,7 +58,7 @@ export const TransactionHeader = ({
         <div>
           <strong>Base fee:</strong>
         </div>
-        <div> {stroopToXlm(_fee)} XLM</div>
+        <div> {stroopToXdb(_fee)} XDB</div>
       </li>
     ) : null}
     {memo ? (

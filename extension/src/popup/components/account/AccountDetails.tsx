@@ -76,6 +76,7 @@ export const AccountDetails = () => {
   useEffect(() => {
     const fetchAccountDetails = async () => {
       try {
+        console.log("Network details are: ", networkDetails);
         const res = await getAccountDetails({ publicKey, networkDetails });
         setAccountDetails(res);
       } catch (e) {
@@ -92,7 +93,7 @@ export const AccountDetails = () => {
     const collection = [] as Array<any>;
     if (!balances) return;
 
-    // put XLM at the top of the balance list
+    // put XDB at the top of the balance list
     Object.entries(balances).forEach(([k, v]) => {
       if (k === "native") {
         collection.unshift(v);

@@ -29,7 +29,8 @@ export const COLOR_PALETTE = {
   primaryTextGradient: "linear-gradient(180deg, #82A5FF 0%, #00FFE0 100%)",
   darkPrimaryTextGradient:
     "linear-gradient(180deg, #82A5FF 0%, rgb(6, 14, 26) 100%)",
-  menuGradient: "linear-gradient(180deg, #564df0 0%, #2d18b5 100%)",
+  menuGradient:
+    "linear-gradient(180deg, rgba(130, 165, 255, 0) 0%, rgba(130, 165, 255, 0.2) 44.83%, rgba(0, 255, 224, 0.08) 123.59%), linear-gradient(0deg, #000000, #000000)",
 };
 
 export const Z_INDEXES = {

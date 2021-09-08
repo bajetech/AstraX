@@ -86,7 +86,8 @@ export const AccountAssets = ({
           retryAssetIconFetch={retryAssetIconFetch}
         />
         <LumenBalanceEl>
-          {new BigNumber(total).toString()} <AssetTypeEl>{code}</AssetTypeEl>
+          {new BigNumber(total).toString()}{" "}
+          <AssetTypeEl>{code === "XLM" ? "XDB" : code}</AssetTypeEl>
         </LumenBalanceEl>
       </AssetEl>
     ))}

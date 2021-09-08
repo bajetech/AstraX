@@ -28,4 +28,4 @@ export const getTransactionInfo = (search: string) => {
   };
 };
 
-export const stroopToXlm = (stroop: number) => stroop / 10000000;
+export const stroopToXdb = (stroop: number) => stroop / 10000000;
