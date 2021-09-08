@@ -83,7 +83,9 @@ export const AccountDetails = () => {
       }
     };
 
-    fetchAccountDetails();
+    if (networkDetails && networkDetails.networkName !== undefined) {
+      fetchAccountDetails();
+    }
   }, [publicKey, networkDetails, isAccountFriendbotFunded]);
 
   useEffect(() => {
