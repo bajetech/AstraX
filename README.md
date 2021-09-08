@@ -1,6 +1,6 @@
 # AstraX
 
-This repo is constructed using yarn workspaces and consists of the 4 sections:
+This repo is constructed using yarn workspaces and consists of the following 3 sections:
 
 - the browser extension (`/extension`)
 - the client-facing SDK (`/@bajetech/astrax-api`)
@@ -55,7 +55,7 @@ These can be started individually with `yarn start:\<workspace name\>` where
 yarn build
 ```
 
-This will produce final output for the, the `@bajetech/astrax-api` npm module, and
+This will produce final output for the `@bajetech/astrax-api` npm module, and
 the extension.
 
 `yarn build:\<workspace name\>`, like the equivalent start commands, will build
@@ -65,9 +65,7 @@ an individual workspace.
 
 [The popup webapp](http://localhost:9000/#/)
 
-It's important to note that these two won't interact with the _dev server_ popup
-UI on `localhost:9000` — you'll need to re-install the unpacked extension each
-time you make a change.
+[The AstraX Documentation website](https://astrax-api-docs.netlify.app)
 
 ### Importing a workspace
 

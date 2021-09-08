@@ -1,8 +1,4 @@
-import {
-  KeyManager,
-  KeyManagerPlugins,
-  KeyType,
-} from "@stellar/wallet-sdk";
+import { KeyManager, KeyManagerPlugins, KeyType } from "@stellar/wallet-sdk";
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
 // @ts-ignore
 import { fromMnemonic, generateMnemonic } from "stellar-hd-wallet";
@@ -35,7 +31,7 @@ import {
   getIsMemoValidationEnabled,
   getIsSafetyValidationEnabled,
 } from "background/helpers/account";
-import { getNetworkDetails } from "@shared/helpers/stellar";
+import { getNetworkDetails } from "@shared/helpers/digitalbits";
 import { SessionTimer } from "background/helpers/session";
 
 import { store } from "background/store";
@@ -144,7 +140,9 @@ export const popupMessageListener = (request: Request) => {
     if (getIsTestnet()) {
       try {
         await fetch(
-          `https://friendbot.stellar.org?addr=${encodeURIComponent(publicKey)}`,
+          `https://frontier.testnet.digitalbits.io/friendbot?addr=${encodeURIComponent(
+            publicKey,
+          )}`,
         );
       } catch (e) {
         console.error(e);

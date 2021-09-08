@@ -9,7 +9,7 @@ import {
   saveSettings as saveSettingsService,
   loadSettings as loadSettingsService,
 } from "@shared/api/internal";
-import { NetworkDetails } from "@shared/helpers/stellar";
+import { NetworkDetails } from "@shared/helpers/digitalbits";
 
 import { Settings } from "@shared/api/types";
 
@@ -63,7 +63,7 @@ export const saveSettings = createAsyncThunk<
         isMemoValidationEnabled,
         isSafetyValidationEnabled,
       });
-    } catch (e) {
+    } catch (e: any) {
       console.error(e);
       return thunkApi.rejectWithValue({
         errorMessage: e.message,

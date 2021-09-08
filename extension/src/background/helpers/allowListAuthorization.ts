@@ -1,4 +1,4 @@
-import { Runtime } from "webextension-polyfill-ts";
+import { Runtime } from "webextension-polyfill";
 
 import { ALLOWLIST_ID } from "constants/localStorageTypes";
 import { getUrlHostname, getPunycodedDomain } from "helpers/urls";

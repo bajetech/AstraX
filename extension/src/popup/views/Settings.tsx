@@ -1,26 +1,27 @@
 import {
-    MAINNET_NETWORK_DETAILS,
-    TESTNET_NETWORK_DETAILS
-} from "@shared/helpers/stellar";
+  MAINNET_NETWORK_DETAILS,
+  TESTNET_NETWORK_DETAILS,
+} from "@shared/helpers/digitalbits";
 import { Formik } from "formik";
 import { SubviewHeader, SubviewWrapper } from "popup/basics/AccountSubview";
 import {
-    CheckboxField, Form,
-    FormRow, RadioField,
-    SubmitButton
+  CheckboxField,
+  Form,
+  FormRow,
+  RadioField,
+  SubmitButton,
 } from "popup/basics/Forms";
 import { ROUTES } from "popup/constants/routes";
 import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
 import {
-    saveSettings, settingsNetworkDetailsSelector, settingsSelector
+  saveSettings,
+  settingsNetworkDetailsSelector,
+  settingsSelector,
 } from "popup/ducks/settings";
 import { navigateTo } from "popup/helpers/navigate";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-
-
-
 
 const SettingRowEl = styled.div`
   margin-bottom: 2.8rem;
@@ -139,10 +140,9 @@ export const Settings = () => {
                 name="isDataSharingAllowedValue"
                 label={
                   <SettingsLabelEl>
-                    Allow AstraX to collect anonymous information about
-                    usage. AstraX will never collect your personal
-                    information such as IP address, keys, balance or transaction
-                    amounts.
+                    Allow AstraX to collect anonymous information about usage.
+                    AstraX will never collect your personal information such as
+                    IP address, keys, balance or transaction amounts.
                   </SettingsLabelEl>
                 }
               />
