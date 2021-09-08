@@ -39,6 +39,7 @@ const Screen = styled.section`
   align-content: center;
   justify-content: center;
   height: calc(100vh - ${HEADER_HEIGHT}px);
+  padding-top: 80px;
   max-height: 40rem;
   max-width: 57rem;
   width: 100%;

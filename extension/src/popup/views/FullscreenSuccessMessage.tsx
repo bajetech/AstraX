@@ -7,17 +7,13 @@ import { Header } from "popup/components/Header";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 import { ROUTES } from "popup/constants/routes";
 import {
-    COLOR_PALETTE,
-    FONT_WEIGHT,
-    ROUNDED_CORNERS
+  COLOR_PALETTE,
+  FONT_WEIGHT,
+  ROUNDED_CORNERS,
 } from "popup/constants/styles";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-
-
-
-
 
 const HeaderEl = styled.h1`
   font-weight: 200;
@@ -62,7 +58,7 @@ const IlloContainerEl = styled.div`
 
 const MessageEl = styled.div`
   border-radius: ${ROUNDED_CORNERS};
-  background-color: #563bf1;
+  background-color: ${COLOR_PALETTE.primaryGradient};
   padding: 1.75rem 1.5rem;
   text-align: left;
   font-size: 0.93rem;
@@ -114,18 +110,17 @@ const MnemonicPhraseConfirmedMessage = () => (
       </MessageSubheaderEl>
       <MessageListEl>
         <li>
-          AstraX will <strong>never ask for your backup phrase</strong>{" "}
-          unless you're actively importing your account using the browser
-          extension. We will never ask for your backup phrase on an external
-          website.
+          AstraX will <strong>never ask for your backup phrase</strong> unless
+          you're actively importing your account using the browser extension. We
+          will never ask for your backup phrase on an external website.
         </li>
         <li>
-          Always check the domain of websites you're using AstraX with to
-          make sure you’re interacting with the authentic site.
+          Always check the domain of websites you're using AstraX with to make
+          sure you’re interacting with the authentic site.
         </li>
         <li>
-          AstraX cannot recover your account if you lose your backup phrase,
-          so keep it safe and secure.
+          AstraX cannot recover your account if you lose your backup phrase, so
+          keep it safe and secure.
         </li>
       </MessageListEl>
     </MessageEl>

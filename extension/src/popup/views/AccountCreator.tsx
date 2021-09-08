@@ -114,11 +114,11 @@ export const AccountCreator = () => {
                     label={
                       <span>
                         I have read and agree to{" "}
-                        <a href="https://stellar.org/terms-of-service">
+                        <a href="https://digitalbits.io/terms-of-service">
                           Terms of Use
                         </a>{" "}
                         and{" "}
-                        <a href="https://stellar.org/privacy-policy">
+                        <a href="https://digitalbits.io/privacy-policy">
                           Privacy Policy
                         </a>
                       </span>
