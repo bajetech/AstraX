@@ -9,9 +9,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-
-
-
 const BoxEl = styled.div`
   position: relative;
   width: 22.75rem;
@@ -40,6 +37,9 @@ const LargeHeadingEl = styled.div`
 
   strong {
     color: ${COLOR_PALETTE.primary};
+    background: ${COLOR_PALETTE.darkPrimaryTextGradient};
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 `;
 

@@ -23,9 +23,14 @@ export const COLOR_PALETTE = {
   warningFaded: "#F8E4CC",
   publicNetworkIcon: "#68E375",
   testNetworkIcon: "#FF994F",
-  primaryGradient: "linear-gradient(180deg, #4b42e3 0%, #302cd1 100%)",
+  primaryGradient:
+    "linear-gradient(180deg, rgba(130, 165, 255, 0) 0%, rgba(130, 165, 255, 0.2) 44.83%, rgba(0, 255, 224, 0.08) 123.59%), linear-gradient(0deg, #000000, #000000)",
   darkPrimaryGradient: "linear-gradient(180deg, #443BDB 0%, #2521C3 100%)",
-  menuGradient: "linear-gradient(180deg, #564df0 0%, #2d18b5 100%)",
+  primaryTextGradient: "linear-gradient(180deg, #82A5FF 0%, #00FFE0 100%)",
+  darkPrimaryTextGradient:
+    "linear-gradient(180deg, #82A5FF 0%, rgb(6, 14, 26) 100%)",
+  menuGradient:
+    "linear-gradient(180deg, rgba(130, 165, 255, 0) 0%, rgba(130, 165, 255, 0.2) 44.83%, rgba(0, 255, 224, 0.08) 123.59%), linear-gradient(0deg, #000000, #000000)",
 };
 
 export const Z_INDEXES = {

@@ -68,7 +68,7 @@ export const DisplayMnemonicPhrase = ({
 
   return (
     <HalfScreen data-testid="display-mnemonic-phrase">
-      <p>
+      <p style={{ paddingTop: 80 }}>
         Your backup phrase gives you access to your account and is the only way
         to restore it in a new browser. We do not store and cannot help you
         recover your backup phrase or get you access to your account, so please

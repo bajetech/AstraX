@@ -93,7 +93,7 @@ const PaymentInfo = ({
   <>
     <PaymentEl>
       {isRecipient ? "+" : "-"}
-      {amount} {assetCode || "XLM"}
+      {amount} {assetCode || "XDB"}
     </PaymentEl>
     <HistoryColumnRowEl>
       <KeyIdenticon isSmall publicKey={otherAccount} />
