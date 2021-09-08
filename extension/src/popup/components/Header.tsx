@@ -1,13 +1,10 @@
 import { HEADER_HEIGHT } from "constants/dimensions";
-import FreighterLogoLockup from "popup/assets/logo-lockup-freighter.svg";
+import FreighterLogoLockup from "popup/assets/logo-astrax.svg";
 import { COLOR_PALETTE, FONT_FAMILY } from "popup/constants/styles";
 import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-
-
-
 
 const HeaderEl = styled.header`
   background: ${COLOR_PALETTE.primaryGradient};
@@ -21,8 +18,8 @@ const HeaderEl = styled.header`
 `;
 
 const FreighterLogoEl = styled.img`
-  height: 7.1rem;
-  width: 10.3rem;
+  height: auto;
+  width: 8.125rem;
 `;
 
 const RightSectionEl = styled.div`
