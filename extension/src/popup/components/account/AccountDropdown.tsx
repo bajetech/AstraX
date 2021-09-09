@@ -140,7 +140,7 @@ export const AccountDropdown = ({
           to={{
             pathname: ROUTES.addAccount,
             state: {
-              header: "Create a new Stellar address",
+              header: "Create a new DigitalBits address",
               cta: "Add address",
             },
           }}
@@ -148,15 +148,15 @@ export const AccountDropdown = ({
           <AccountDropdownOptionIconEl>
             <img src={CreateNewIcon} alt="create new address button" />{" "}
           </AccountDropdownOptionIconEl>
-          <span>Create a new Stellar address</span>
+          <span>Create a new DigitalBits address</span>
         </AccountDropdownOptionLinkEl>
       </AccountDropdownOptionEl>
       <AccountDropdownOptionEl>
         <AccountDropdownOptionLinkEl to={ROUTES.importAccount}>
           <AccountDropdownOptionIconEl>
-            <img src={ImportNewIcon} alt="import a Stellar key button" />{" "}
+            <img src={ImportNewIcon} alt="import a DigitalBits key button" />{" "}
           </AccountDropdownOptionIconEl>
-          <span>Import a Stellar secret key</span>
+          <span>Import a DigitalBits secret key</span>
         </AccountDropdownOptionLinkEl>
       </AccountDropdownOptionEl>
     </AccountDropdownOptionsEl>
