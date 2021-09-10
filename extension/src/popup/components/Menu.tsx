@@ -143,7 +143,7 @@ export const Menu = () => {
               <a
                 rel="noreferrer"
                 target="_blank"
-                href="http://freighter.app/help"
+                href="https://astraxwallet.com/faq"
               >
                 Help
               </a>
