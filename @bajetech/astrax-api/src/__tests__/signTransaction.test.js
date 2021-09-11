@@ -1,5 +1,5 @@
-import * as apiExternal from "../utils/api/external";
-import { NETWORKS } from "../utils/constants/digitalbits";
+import * as apiExternal from "@shared/api/external";
+import { NETWORKS } from "@shared/constants/digitalbits";
 import { signTransaction } from "../signTransaction";
 
 describe("signTransaction", () => {
