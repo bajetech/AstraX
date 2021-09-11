@@ -1,4 +1,4 @@
-import { submitTransaction } from "./utils/api/external";
+import { submitTransaction } from "@shared/api/external";
 
 export const signTransaction = (
   transactionXdr: string,

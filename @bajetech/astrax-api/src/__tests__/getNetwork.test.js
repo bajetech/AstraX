@@ -1,4 +1,4 @@
-import * as apiExternal from "../utils/api/external";
+import * as apiExternal from "@shared/api/external";
 import { getNetwork } from "../getNetwork";
 
 describe("getNetwork", () => {

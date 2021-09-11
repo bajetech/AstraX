@@ -1,3 +1,3 @@
-import { requestPublicKey } from "./utils/api/external";
+import { requestPublicKey } from "@shared/api/external";
 
 export const getPublicKey = () => requestPublicKey();
