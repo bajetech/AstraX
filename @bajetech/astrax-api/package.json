@@ -1,6 +1,6 @@
 {
   "name": "@bajetech/astrax-api",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "Apache-2.0",
   "author": "BajeTech <hello@bajetech.com>",
   "description": "Utility functions to interact with AstraX web extension",
@@ -16,6 +16,9 @@
     "type": "git"
   },
   "main": "build/index.min.js",
+  "files": [
+    "build/**"
+  ],
   "scripts": {
     "prepare": "yarn build",
     "build": "webpack --config webpack.production.js --mode production",
