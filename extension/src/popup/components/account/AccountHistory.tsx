@@ -199,10 +199,10 @@ export const AccountHistory = ({
       <FullHistoryBtnEl
         onClick={() => {
           emitMetric(METRIC_NAMES.historyOpenFullHistory);
-          openTab(`${STELLAR_EXPERT_URL}/account/${publicKey}`);
+          openTab(`http://xdbexplorer.com/`);
         }}
       >
-        Check full history on stellar.expert
+        Check full history on XDB Explorer
       </FullHistoryBtnEl>
     </>
   );

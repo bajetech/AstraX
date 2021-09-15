@@ -111,7 +111,7 @@ export const Settings = () => {
             </FormRow>
           </SettingRowEl>
           <SettingRowEl>
-            <SubheaderEl>Verification with stellar.expert</SubheaderEl>
+            <SubheaderEl>Verification with XDB Explorer</SubheaderEl>
             <FormRow>
               <CheckboxField
                 name="isValidatingMemoValue"

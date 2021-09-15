@@ -26,7 +26,7 @@ import {
   publicKeySelector,
   updateAccountName,
 } from "popup/ducks/accountServices";
-import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
+// import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
 
 import { Toast } from "popup/components/Toast";
 
@@ -140,7 +140,7 @@ export const ViewPublicKey = () => {
   const [isCopied, setIsCopied] = useState(false);
   const [isEditingName, setIsEditingName] = useState(false);
   const accountNameElRef = useRef<HTMLElement>(null);
-  const { networkName } = useSelector(settingsNetworkDetailsSelector);
+  // const { networkName } = useSelector(settingsNetworkDetailsSelector);
 
   const dispatch = useDispatch();
 
@@ -229,14 +229,12 @@ export const ViewPublicKey = () => {
         </CopiedToastWrapperEl>
         <LinkButton
           onClick={() => {
-            openTab(
-              `https://stellar.expert/explorer/${networkName.toLowerCase()}/account/${publicKey}`,
-            );
+            openTab(`http://xdbexplorer.com/`);
             emitMetric(METRIC_NAMES.viewPublicKeyClickedStellarExpert);
           }}
         >
           <img src={StellarExpertIcon} alt="view on StellarExpert button" />
-          View on StellarExpert
+          View on XDB Explorer
         </LinkButton>
       </ButtonsEl>
     </QrEl>
