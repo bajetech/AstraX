@@ -181,7 +181,7 @@ export const AccountHistory = ({
 }) => {
   const { isTestnet } = useSelector(settingsNetworkDetailsSelector);
 
-  const STELLAR_EXPERT_URL = `https://stellar.expert/explorer/${
+  const STELLAR_EXPERT_URL = `http://xdbexplorer.com//${
     isTestnet ? "testnet" : "public"
   }`;
   return (

@@ -4,26 +4,26 @@ import { AppDispatch } from "popup/App";
 import IconOrangeLock from "popup/assets/icon-orange-lock.svg";
 import { SubviewHeader, SubviewWrapper } from "popup/basics/AccountSubview";
 import {
-    ApiErrorMessage, CheckboxField, Error,
-    Form,
-    FormRow, SubmitButton, TextField
+  ApiErrorMessage,
+  CheckboxField,
+  Error,
+  Form,
+  FormRow,
+  SubmitButton,
+  TextField,
 } from "popup/basics/Forms";
 import { WarningMessage } from "popup/components/WarningMessage";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 import { ROUTES } from "popup/constants/routes";
 import {
-    authErrorSelector, clearApiError,
-    importAccount
+  authErrorSelector,
+  clearApiError,
+  importAccount,
 } from "popup/ducks/accountServices";
 import { navigateTo } from "popup/helpers/navigate";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { bool as YupBool, object as YupObject, string as YupString } from "yup";
-
-
-
-
-
 
 export const ImportAccount = () => {
   interface FormValues {
@@ -67,7 +67,7 @@ export const ImportAccount = () => {
   return (
     <>
       <SubviewWrapper>
-        <SubviewHeader headerText="Import Stellar secret key" />
+        <SubviewHeader headerText="Import DigitalBits secret key" />
         <WarningMessage
           icon={IconOrangeLock}
           subheader="Read before importing your key"
@@ -80,8 +80,8 @@ export const ImportAccount = () => {
             </li>
 
             <li>
-              AstraX <strong>will never ask</strong> for your secret key
-              outside of the extension
+              AstraX <strong>will never ask</strong> for your secret key outside
+              of the extension
             </li>
           </ul>
         </WarningMessage>
@@ -100,7 +100,7 @@ export const ImportAccount = () => {
                     clearImportAccountError(e);
                     handleChange(e);
                   }}
-                  placeholder="Your Stellar secret key"
+                  placeholder="Your DigitalBits secret key"
                   type="password"
                 />
                 <Error name="privateKey" />
