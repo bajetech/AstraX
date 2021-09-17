@@ -26,6 +26,7 @@ import {
 import { Header } from "popup/components/Header";
 import { Onboarding, HalfScreen } from "popup/components/Onboarding";
 import { PasswordRequirements } from "popup/components/PasswordRequirements";
+import { TERMS_OF_USE_URL, PRIVACY_POLICY_URL } from "constants/misc";
 
 import CreatePasswordIllo from "popup/assets/illo-create-password.svg";
 
@@ -114,13 +115,8 @@ export const AccountCreator = () => {
                     label={
                       <span>
                         I have read and agree to{" "}
-                        <a href="https://digitalbits.io/terms-of-service">
-                          Terms of Use
-                        </a>{" "}
-                        and{" "}
-                        <a href="https://digitalbits.io/privacy-policy">
-                          Privacy Policy
-                        </a>
+                        <a href={TERMS_OF_USE_URL}>Terms of Use</a> and{" "}
+                        <a href={PRIVACY_POLICY_URL}>Privacy Policy</a>
                       </span>
                     }
                   />

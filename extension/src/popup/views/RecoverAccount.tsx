@@ -37,6 +37,7 @@ import { Onboarding, HalfScreen } from "popup/components/Onboarding";
 import { PasswordRequirements } from "popup/components/PasswordRequirements";
 
 import ImportWalletIllo from "popup/assets/illo-backup-phrase.svg";
+import { PRIVACY_POLICY_URL, TERMS_OF_USE_URL } from "constants/misc";
 
 const HalfScreenEl = styled(HalfScreen)`
   height: 33rem;
@@ -165,13 +166,8 @@ export const RecoverAccount = () => {
                       label={
                         <span>
                           I have read and agree to the{" "}
-                          <a href="https://digitalbits.io/terms-of-service">
-                            Terms of Use
-                          </a>{" "}
-                          and{" "}
-                          <a href="https://digitalbits.io/privacy-policy">
-                            Privacy Policy
-                          </a>
+                          <a href={TERMS_OF_USE_URL}>Terms of Use</a> and{" "}
+                          <a href={PRIVACY_POLICY_URL}>Privacy Policy</a>
                         </span>
                       }
                       name="termsOfUse"
