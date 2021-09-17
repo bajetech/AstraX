@@ -166,8 +166,21 @@ export const RecoverAccount = () => {
                       label={
                         <span>
                           I have read and agree to the{" "}
-                          <a href={TERMS_OF_USE_URL}>Terms of Use</a> and{" "}
-                          <a href={PRIVACY_POLICY_URL}>Privacy Policy</a>
+                          <a
+                            href={TERMS_OF_USE_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Terms of Use
+                          </a>{" "}
+                          and{" "}
+                          <a
+                            href={PRIVACY_POLICY_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Privacy Policy
+                          </a>
                         </span>
                       }
                       name="termsOfUse"
