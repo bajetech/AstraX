@@ -1,7 +1,7 @@
 import { KeyManager, KeyManagerPlugins, KeyType } from "@stellar/wallet-sdk";
 import DigitalBitsSdk from "xdb-digitalbits-sdk";
 // @ts-ignore
-import { fromMnemonic, generateMnemonic } from "stellar-hd-wallet";
+import DigitalBitsHDWallet from "@bajetech/digitalbits-hd-wallet";
 
 import { SERVICE_TYPES } from "@shared/constants/services";
 import { APPLICATION_STATE } from "@shared/constants/applicationState";
@@ -156,8 +156,10 @@ export const popupMessageListener = (request: Request) => {
   const createAccount = async () => {
     const { password } = request;
 
-    const mnemonicPhrase = generateMnemonic({ entropyBits: 128 });
-    const wallet = fromMnemonic(mnemonicPhrase);
+    const mnemonicPhrase = DigitalBitsHDWallet.generateMnemonic({
+      entropyBits: 128,
+    });
+    const wallet = DigitalBitsHDWallet.fromMnemonic(mnemonicPhrase);
 
     const KEY_DERIVATION_NUMBER = 0;
 
@@ -201,7 +203,7 @@ export const popupMessageListener = (request: Request) => {
       return { error: "Incorrect password" };
     }
 
-    const wallet = fromMnemonic(mnemonicPhrase);
+    const wallet = DigitalBitsHDWallet.fromMnemonic(mnemonicPhrase);
     const keyNumber =
       Number(localStorage.getItem(KEY_DERIVATION_NUMBER_ID)) + 1;
 
@@ -345,7 +347,7 @@ export const popupMessageListener = (request: Request) => {
     let applicationState;
 
     try {
-      wallet = fromMnemonic(recoverMnemonic);
+      wallet = DigitalBitsHDWallet.fromMnemonic(recoverMnemonic);
     } catch (e) {
       console.error(e);
     }
