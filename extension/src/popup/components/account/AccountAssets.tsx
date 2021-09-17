@@ -7,7 +7,7 @@ import { AssetIcons } from "@shared/api/types";
 
 import { ScrollingView } from "popup/basics/AccountSubview";
 
-import StellarLogo from "popup/assets/stellar-logo.png";
+import XdbCurrencyLogo from "popup/assets/xdb-currency-logo.png";
 
 const AssetWrapper = styled.div`
   ${ScrollingView}
@@ -58,7 +58,7 @@ const AssetIcon = ({
   assetIcons[code] || code === "XLM" ? (
     <AssetLogoEl
       alt={`${code} logo`}
-      src={code === "XLM" ? StellarLogo : assetIcons[code] || ""}
+      src={code === "XLM" ? XdbCurrencyLogo : assetIcons[code] || ""}
       onError={() => {
         retryAssetIconFetch({ key: issuerKey, code });
       }}

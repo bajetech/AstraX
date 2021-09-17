@@ -60,7 +60,7 @@ export const AddAccount = () => {
   return (
     <>
       <SubviewWrapper>
-        <SubviewHeader headerText="Add a new Stellar address" />
+        <SubviewHeader headerText="Add a new DigitalBits address" />
         <Formik initialValues={initialValues} onSubmit={handleSubmit}>
           {({ dirty, handleChange, isSubmitting, isValid }) => (
             <Form>

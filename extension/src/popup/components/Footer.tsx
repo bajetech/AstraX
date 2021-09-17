@@ -1,16 +1,9 @@
-import accountViewerLogo from "popup/assets/logo-av.png";
-import accountViewerLogo2x from "popup/assets/logo-av@2x.png";
-import laboratoryLogo from "popup/assets/logo-laboratory.png";
-import laboratoryLogo2x from "popup/assets/logo-laboratory@2x.png";
-import stellarTermLogo from "popup/assets/logo-stellarterm.png";
-import stellarTermLogo2x from "popup/assets/logo-stellarterm@2x.png";
+import digitalbitsLogo from "popup/assets/digitalbits-logo.png";
+import digitalbitsLaboratoryLogo from "popup/assets/digitalbits-laboratory-logo.svg";
 import { RetinaImg } from "popup/basics/Images";
 import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
 import React from "react";
 import styled from "styled-components";
-
-
-
 
 const FooterEl = styled.footer`
   box-sizing: border-box;
@@ -39,6 +32,12 @@ const FooterListEl = styled.ul`
 const FooterListItemEl = styled.li`
   font-size: 0.75rem;
   display: inline-block;
+  display: flex;
+  align-items: center;
+  img {
+    width: 150px;
+    height: auto;
+  }
 `;
 
 export const Footer = () => (
@@ -46,40 +45,36 @@ export const Footer = () => (
     <FooterHeaderEl>Use AstraX with</FooterHeaderEl>
     <FooterListEl>
       <FooterListItemEl>
-        <a
-          href="https://accountviewer.stellar.org"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="http://xdbexplorer.com/" target="_blank" rel="noreferrer">
           <RetinaImg
-            retina={accountViewerLogo2x}
-            src={accountViewerLogo}
-            alt="Stellar Account Viewer logo"
+            retina={digitalbitsLogo}
+            src={digitalbitsLogo}
+            alt="Digitalbits Account Viewer logo"
           />
         </a>
       </FooterListItemEl>
       <FooterListItemEl>
         <a
-          href="https://laboratory.stellar.org"
+          href="https://laboratory.livenet.digitalbits.io/#?network=test"
           target="_blank"
           rel="noreferrer"
         >
           <RetinaImg
-            retina={laboratoryLogo2x}
-            src={laboratoryLogo}
-            alt="Stellar Laboratory logo"
+            retina={digitalbitsLaboratoryLogo}
+            src={digitalbitsLaboratoryLogo}
+            alt="Digitalbits Laboratory logo"
           />
         </a>
       </FooterListItemEl>
-      <FooterListItemEl>
+      {/* <FooterListItemEl>
         <a href="https://stellarterm.com" target="_blank" rel="noreferrer">
           <RetinaImg
-            retina={stellarTermLogo2x}
-            src={stellarTermLogo}
+            retina={digitalbitsLogo}
+            src={digitalbitsLogo}
             alt="StellarTerm logo"
           />
         </a>
-      </FooterListItemEl>
+      </FooterListItemEl> */}
     </FooterListEl>
   </FooterEl>
 );

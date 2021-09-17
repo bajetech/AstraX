@@ -181,7 +181,7 @@ export const AccountHistory = ({
 }) => {
   const { isTestnet } = useSelector(settingsNetworkDetailsSelector);
 
-  const STELLAR_EXPERT_URL = `https://stellar.expert/explorer/${
+  const STELLAR_EXPERT_URL = `http://xdbexplorer.com//${
     isTestnet ? "testnet" : "public"
   }`;
   return (
@@ -199,10 +199,10 @@ export const AccountHistory = ({
       <FullHistoryBtnEl
         onClick={() => {
           emitMetric(METRIC_NAMES.historyOpenFullHistory);
-          openTab(`${STELLAR_EXPERT_URL}/account/${publicKey}`);
+          openTab(`http://xdbexplorer.com/`);
         }}
       >
-        Check full history on stellar.expert
+        Check full history on XDB Explorer
       </FullHistoryBtnEl>
     </>
   );
