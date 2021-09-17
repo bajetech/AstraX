@@ -1,4 +1,5 @@
 import digitalbitsLogo from "popup/assets/digitalbits-logo.png";
+import digitalbitsLaboratoryLogo from "popup/assets/digitalbits-laboratory-logo.svg";
 import { RetinaImg } from "popup/basics/Images";
 import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
 import React from "react";
@@ -31,6 +32,8 @@ const FooterListEl = styled.ul`
 const FooterListItemEl = styled.li`
   font-size: 0.75rem;
   display: inline-block;
+  display: flex;
+  align-items: center;
   img {
     width: 150px;
     height: auto;
@@ -57,8 +60,8 @@ export const Footer = () => (
           rel="noreferrer"
         >
           <RetinaImg
-            retina={digitalbitsLogo}
-            src={digitalbitsLogo}
+            retina={digitalbitsLaboratoryLogo}
+            src={digitalbitsLaboratoryLogo}
             alt="Digitalbits Laboratory logo"
           />
         </a>
