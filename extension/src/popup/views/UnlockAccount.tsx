@@ -28,21 +28,25 @@ import {
   authErrorSelector,
 } from "popup/ducks/accountServices";
 
-import WaveIllo from "popup/assets/illo-wave.svg";
+import Wave from "popup/assets/wave.png";
 
 const HeaderContainerEl = styled.div`
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: auto auto;
   padding: 0 0.25rem 3rem;
   line-height: 1;
 `;
 const HeaderEl = styled.h1`
   display: inline-block;
-  color: ${COLOR_PALETTE.primary}};
   font-weight: ${FONT_WEIGHT.light};
   margin: 0;
-  margin-left: 1rem;
 `;
+
+const HeaderTextContainerEl = styled.div`
+  display: grid;
+  grid-template-rows: auto auto;
+`;
+
 const ImportButtonEl = styled(BasicButton)`
   color: ${COLOR_PALETTE.primary};
 `;
@@ -65,8 +69,9 @@ const ListItemEl = styled.li`
 const ButtonRowEl = styled.div`
   padding: 3.25rem 0 1.5rem;
 `;
-const IlloContainerEl = styled.div`
+const WaveImgContainerEl = styled.div`
   position: relative;
+  max-width: max-content;
   img {
     height: 4.0625rem;
   }
@@ -102,10 +107,13 @@ export const UnlockAccount = () => {
           {({ dirty, isSubmitting, isValid }) => (
             <Form>
               <HeaderContainerEl>
-                <IlloContainerEl>
-                  <img src={WaveIllo} alt="Wave Illustration" />
-                </IlloContainerEl>
-                <HeaderEl>Log in</HeaderEl>
+                <WaveImgContainerEl>
+                  <img src={Wave} alt="Wave Illustration" />
+                </WaveImgContainerEl>
+                <HeaderTextContainerEl>
+                  <HeaderEl>Welcome back!</HeaderEl>
+                  <p>Log in to access your account</p>
+                </HeaderTextContainerEl>
               </HeaderContainerEl>
               <FormRow>
                 <CustomFormTextFieldEl

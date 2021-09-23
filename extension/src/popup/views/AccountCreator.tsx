@@ -28,15 +28,13 @@ import { Onboarding, HalfScreen } from "popup/components/Onboarding";
 import { PasswordRequirements } from "popup/components/PasswordRequirements";
 import { TERMS_OF_USE_URL, PRIVACY_POLICY_URL } from "constants/misc";
 
-import CreatePasswordIllo from "popup/assets/illo-create-password.svg";
+import LockEmoji from "popup/assets/lock-emoji.png";
 
 const IconImgEl = styled.img`
-  height: 6.25rem;
+  height: 8.25rem;
 `;
 
-const IconEl = () => (
-  <IconImgEl src={CreatePasswordIllo} alt="Create Password" />
-);
+const IconEl = () => <IconImgEl src={LockEmoji} alt="Create Password" />;
 
 const ModifiedHalfScreenEl = styled(HalfScreen)`
   padding-left: 1.55rem;
