@@ -19,7 +19,7 @@
     "@shared/api": "1.0.0",
     "@shared/constants": "1.0.0",
     "@shared/helpers": "1.0.0",
-    "@stellar/wallet-sdk": "^0.2.0-rc.2",
+    "@stellar/wallet-sdk": "^0.3.0-rc.9",
     "@testing-library/react": "^12.1.1",
     "@testing-library/user-event": "^7.1.2",
     "@types/chrome": "^0.0.158",
