@@ -14,7 +14,7 @@
   "dependencies": {
     "@bajetech/digitalbits-hd-wallet": "^1.1.0",
     "@reduxjs/toolkit": "^1.5.0",
-    "@sentry/browser": "^6.0.0",
+    "@sentry/browser": "^6.13.2",
     "@sentry/tracing": "^6.0.0",
     "@shared/api": "1.0.0",
     "@shared/constants": "1.0.0",
