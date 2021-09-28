@@ -36,7 +36,7 @@
     "@types/yup": "^0.29.13",
     "bignumber.js": "^9.0.1",
     "buffer": "^6.0.3",
-    "concurrently": "^5.1.0",
+    "concurrently": "^6.2.2",
     "copy-webpack-plugin": "^9.0.1",
     "fetch": "^1.1.0",
     "file-loader": "^6.0.0",
