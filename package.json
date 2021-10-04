@@ -74,7 +74,7 @@
     "eslint-plugin-flowtype": "4.x",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "6.x",
-    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "2.x",
     "eslint-webpack-plugin": "^2.5.4",
     "husky": "^4.2.5",
