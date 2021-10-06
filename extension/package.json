@@ -24,7 +24,7 @@
     "@testing-library/user-event": "^13.2.1",
     "@types/chrome": "^0.0.158",
     "@types/history": "^4.7.9",
-    "@types/jsdom": "^16.2.3",
+    "@types/jsdom": "^16.2.13",
     "@types/lodash": "^4.14.175",
     "@types/node": "^16.10.1",
     "@types/qrcode.react": "^1.0.1",
