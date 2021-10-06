@@ -981,7 +981,7 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@bajetech/digitalbits-hd-wallet@^1.1.0":
+"@bajetech/digitalbits-hd-wallet@^1.2.0":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@bajetech/digitalbits-hd-wallet/-/digitalbits-hd-wallet-1.2.0.tgz#e18e8916892c6e0092918e78108b49dd71dd9985"
   integrity sha512-4wp6uHTVg0+56tsFL/mqEDIHTdECAZ0nxVrXqafY5Qrc+SNPL4fkz5PIpfMkxijVk0078ci2fskGDVLHD0TbwA==
