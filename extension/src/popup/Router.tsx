@@ -178,7 +178,7 @@ const HomeRoute = () => {
 // we do use the actions for metrics.
 const RouteListener = () => {
   const dispatch = useDispatch();
-  const location = useLocation();
+  const location: any = useLocation();
 
   useEffect(() => {
     dispatch(navigate(location));
