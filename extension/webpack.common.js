@@ -72,9 +72,11 @@ const commonConfig = (env = { EXPERIMENTAL: false }) => ({
       extensions: [".ts", ".tsx"],
       failOnWarning: true,
     }),
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "./public/static"), to: BUILD_PATH },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, "./public/static"), to: BUILD_PATH },
+      ],
+    }),
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
       chunks: ["index"],

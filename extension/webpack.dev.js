@@ -1,4 +1,4 @@
-const merge = require("webpack-merge");
+const { merge } = require("webpack-merge");
 const webpack = require("webpack");
 const ModuleReplaceWebpackPlugin = require("module-replace-webpack-plugin");
 const { BUILD_PATH, commonConfig } = require("./webpack.common.js");
