@@ -21,16 +21,13 @@ import { BasicButton } from "popup/basics/Buttons";
 
 import { Header } from "popup/components/Header";
 import { AccountDetails } from "popup/components/account/AccountDetails";
-import { SendTransaction } from "popup/components/SendTransaction";
 import { AccountDropdown } from "popup/components/account/AccountDropdown";
 import { Toast } from "popup/components/Toast";
 import { Menu } from "popup/components/Menu";
 
 import CopyColorIcon from "popup/assets/copy-color.svg";
 import QrCode from "popup/assets/qr-code.png";
-import SendIcon from "popup/assets/send-icon.png";
 import HelpIcon from "popup/assets/help-icon.png";
-import CloseIcon from "popup/assets/close-icon.png";
 
 import "popup/metrics/authServices";
 
@@ -80,26 +77,6 @@ const QrButton = styled(BasicButton)`
   vertical-align: text-top;
 `;
 
-const SendButton = styled(BasicButton)`
-  color: ${COLOR_PALETTE.primary};
-  display: flex;
-  ${AccountHeaderButtonStyle}
-
-  img {
-    margin-right: 0.5rem;
-    width: 1rem;
-    height: 1rem;
-  }
-`;
-
-const CloseButton = styled(BasicButton)`
-  img {
-    margin-right: 0.5rem;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-`;
-
 const HelpButton = styled(BasicButton)`
   background: url(${HelpIcon});
   background-size: cover;
@@ -132,14 +109,9 @@ const AccountButtonsWrapper = styled.div`
   grid-template-columns: auto auto;
 `;
 
-const SendTransactionWrapper = styled.div`
-  margin: 0 30px;
-`;
-
 export const Account = () => {
   const [isCopied, setIsCopied] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isSendTransaction, setIsSendTransaction] = useState(false);
   const publicKey = useSelector(publicKeySelector);
   const allAccounts = useSelector(allAccountsSelector);
   const currentAccountName = useSelector(accountNameSelector);
@@ -190,25 +162,13 @@ export const Account = () => {
           <DetailsLink to={ROUTES.viewPublicKey}>
             <QrButton /> Details
           </DetailsLink>
-          <SendButton onClick={() => setIsSendTransaction(true)}>
-            <img src={SendIcon} alt="send button" /> Send
-          </SendButton>
-          <HelpLink to="#">
+          <HelpLink target="_blank" to="https://astraxwallet.com/faq">
             <HelpButton /> Help
           </HelpLink>
         </AccountButtonsWrapper>
       </AccountHeaderEl>
       <AccountEl>
-        {isSendTransaction ? (
-          <SendTransactionWrapper>
-            <CloseButton onClick={() => setIsSendTransaction(false)}>
-              <img src={CloseIcon} alt="close button" />
-            </CloseButton>
-            <SendTransaction setIsSendTransaction={setIsSendTransaction} />
-          </SendTransactionWrapper>
-        ) : (
-          <AccountDetails />
-        )}
+        <AccountDetails />
       </AccountEl>
     </section>
   );
