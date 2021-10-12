@@ -5,7 +5,7 @@ import {
 import { Formik } from "formik";
 import { SubviewHeader, SubviewWrapper } from "popup/basics/AccountSubview";
 import {
-  CheckboxField,
+  // CheckboxField,
   Form,
   FormRow,
   RadioField,
@@ -40,9 +40,9 @@ const RadioFieldEl = styled(RadioField)`
 const SettingsLabelEl = styled.span`
   width: 21.375rem;
 `;
-const SettingsCheckboxFieldEl = styled(CheckboxField)`
-  align-items: flex-start;
-`;
+// const SettingsCheckboxFieldEl = styled(CheckboxField)`
+//   align-items: flex-start;
+// `;
 
 export const Settings = () => {
   const dispatch = useDispatch();
@@ -110,7 +110,7 @@ export const Settings = () => {
               />
             </FormRow>
           </SettingRowEl>
-          <SettingRowEl>
+          {/* <SettingRowEl>
             <SubheaderEl>
               Verification with{" "}
               <a
@@ -141,8 +141,8 @@ export const Settings = () => {
                 }
               />
             </FormRow>
-          </SettingRowEl>
-          <SettingRowEl>
+          </SettingRowEl> */}
+          {/* <SettingRowEl>
             <SubheaderEl>Anonymous data sharing</SubheaderEl>
             <FormRow>
               <SettingsCheckboxFieldEl
@@ -156,7 +156,7 @@ export const Settings = () => {
                 }
               />
             </FormRow>
-          </SettingRowEl>
+          </SettingRowEl> */}
           <FormRowEl>
             <SubmitButton>Save settings</SubmitButton>
           </FormRowEl>
