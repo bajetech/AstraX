@@ -91,7 +91,7 @@ const DetailsLink = styled(Link)`
   vertical-align: middle;
 `;
 
-const HelpLink = styled(Link)`
+const HelpLink = styled.a`
   ${AccountHeaderButtonStyle}
   vertical-align: middle;
 `;
@@ -162,7 +162,11 @@ export const Account = () => {
           <DetailsLink to={ROUTES.viewPublicKey}>
             <QrButton /> Details
           </DetailsLink>
-          <HelpLink target="_blank" to="https://astraxwallet.com/faq">
+          <HelpLink
+            target="_blank"
+            rel="noreferrer"
+            href="https://astraxwallet.com/faq"
+          >
             <HelpButton /> Help
           </HelpLink>
         </AccountButtonsWrapper>
