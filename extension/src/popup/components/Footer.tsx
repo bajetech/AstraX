@@ -1,4 +1,4 @@
-import digitalbitsLogo from "popup/assets/digitalbits-logo.png";
+// import digitalbitsLogo from "popup/assets/digitalbits-logo.png";
 import digitalbitsLaboratoryLogo from "popup/assets/digitalbits-laboratory-logo.svg";
 import { RetinaImg } from "popup/basics/Images";
 import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
@@ -23,7 +23,7 @@ const FooterHeaderEl = styled.h1`
 const FooterListEl = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   list-style-type: none;
   margin: 0;
   padding: 1rem 0;
@@ -44,7 +44,7 @@ export const Footer = () => (
   <FooterEl>
     <FooterHeaderEl>Use AstraX with</FooterHeaderEl>
     <FooterListEl>
-      <FooterListItemEl>
+      {/* <FooterListItemEl>
         <a href="http://xdbexplorer.com/" target="_blank" rel="noreferrer">
           <RetinaImg
             retina={digitalbitsLogo}
@@ -52,7 +52,7 @@ export const Footer = () => (
             alt="Digitalbits Account Viewer logo"
           />
         </a>
-      </FooterListItemEl>
+      </FooterListItemEl> */}
       <FooterListItemEl>
         <a
           href="https://laboratory.livenet.digitalbits.io/#?network=test"
@@ -66,15 +66,6 @@ export const Footer = () => (
           />
         </a>
       </FooterListItemEl>
-      {/* <FooterListItemEl>
-        <a href="https://stellarterm.com" target="_blank" rel="noreferrer">
-          <RetinaImg
-            retina={digitalbitsLogo}
-            src={digitalbitsLogo}
-            alt="StellarTerm logo"
-          />
-        </a>
-      </FooterListItemEl> */}
     </FooterListEl>
   </FooterEl>
 );

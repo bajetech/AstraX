@@ -1,6 +1,6 @@
 import { HEADER_HEIGHT } from "constants/dimensions";
-import CreateWalletIllo from "popup/assets/illo-create-wallet.svg";
-import ImportWalletIllo from "popup/assets/illo-import-wallet.svg";
+import RockEmoji from "popup/assets/rock-emoji.png";
+import Wave from "popup/assets/wave.png";
 import { FullscreenStyle } from "popup/components/FullscreenStyle";
 import { Header } from "popup/components/Header";
 import { ROUTES } from "popup/constants/routes";
@@ -21,11 +21,13 @@ const BoxEl = styled.div`
 const CreateBoxEl = styled(BoxEl)`
   background: ${COLOR_PALETTE.primaryGradient};
   color: ${COLOR_PALETTE.white};
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 
 const ImportBoxEl = styled(BoxEl)`
   border: 1px solid ${COLOR_PALETTE.primary};
-  color: ${COLOR_PALETTE.primary};
+  color: #000000;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
 `;
 
 const LargeHeadingEl = styled.div`
@@ -43,20 +45,17 @@ const LargeHeadingEl = styled.div`
   }
 `;
 
-const HeadingEl = styled.h3`
+const HeadingEl = styled.span`
   font-size: 1.6rem;
   font-weight: 400;
   line-height: 2rem;
   margin: 0.75rem 0;
 `;
 
-const IlloContainerEl = styled.div`
-  position: absolute;
-  top: 1.1rem;
-  right: 1rem;
-
+const IlloContainerEl = styled.span`
   img {
-    height: 3.125rem;
+    height: 2rem;
+    margin-right: 5px;
   }
 `;
 
@@ -112,18 +111,15 @@ export const Welcome = () => (
     <Header />
     <ColumnScreenEl>
       <RowScreenEl>
-        <LargeHeadingEl>
-          Welcome, <br />
-          are you new to <strong>AstraX?</strong>
-        </LargeHeadingEl>
+        <LargeHeadingEl>Get Started</LargeHeadingEl>
       </RowScreenEl>
       <RowScreenEl>
         <HalfScreenEl>
           <CreateBoxEl>
             <IlloContainerEl>
-              <img src={CreateWalletIllo} alt="Create Wallet Illustration" />
+              <img src={Wave} alt="Create Wallet Illustration" />
             </IlloContainerEl>
-            <HeadingEl>I’m new!</HeadingEl>
+            <HeadingEl>I’m new here</HeadingEl>
             <p>I’m going to need a seed phrase</p>
             <LinkButtonWrapperEl>
               <CreateButtonEl to={ROUTES.accountCreator}>
@@ -135,7 +131,7 @@ export const Welcome = () => (
         <HalfScreenEl>
           <ImportBoxEl>
             <IlloContainerEl>
-              <img src={ImportWalletIllo} alt="Import Wallet Illustration" />
+              <img src={RockEmoji} alt="Import Wallet Illustration" />
             </IlloContainerEl>
             <HeadingEl>I’ve done this before</HeadingEl>
             <p>I have my 12 word seed phrase</p>

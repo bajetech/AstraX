@@ -1,9 +1,9 @@
 import React from "react";
 import { camelCase } from "lodash";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
-import { BasicButton } from "popup/basics/Buttons";
+// import { BasicButton } from "popup/basics/Buttons";
 
 import { COLOR_PALETTE } from "popup/constants/styles";
 import { OPERATION_TYPES } from "constants/transaction";
@@ -11,9 +11,9 @@ import { FrontierOperation } from "@shared/api/types";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 
 import { emitMetric } from "helpers/metrics";
-import { openTab } from "popup/helpers/navigate";
+// import { openTab } from "popup/helpers/navigate";
 
-import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
+// import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
 
 import { KeyIdenticon } from "popup/components/identicons/KeyIdenticon";
 
@@ -36,7 +36,7 @@ const HistoryItemEl = styled.li`
   color: ${COLOR_PALETTE.lightText};
   display: flex;
   justify-content: space-between;
-  height: 4rem;
+  height: 5rem;
   padding: 0 1rem 0 2rem;
 
   &: hover {
@@ -70,13 +70,13 @@ const TimestampEl = styled(HistoryColumnRowEl)`
   font-size: 0.75rem;
 `;
 
-const FullHistoryBtnEl = styled(BasicButton)`
-  color: ${COLOR_PALETTE.primary};
-  display: block;
-  font-size: 1rem;
-  margin: 1.5rem auto;
-  text-align: center;
-`;
+// const FullHistoryBtnEl = styled(BasicButton)`
+//   color: ${COLOR_PALETTE.primary};
+//   display: block;
+//   font-size: 1rem;
+//   margin: 1.5rem auto;
+//   text-align: center;
+// `;
 
 interface PaymentInfoProps {
   amount: string;
@@ -106,18 +106,18 @@ const HistoryItem = ({
     amount,
     asset_code: assetCode,
     created_at: createdAt,
-    id,
+    // id,
     to,
     from,
     type,
     transaction_attr: { operation_count: operationCount },
   },
   publicKey,
-  url,
-}: {
+}: // url,
+{
   operation: FrontierOperation;
   publicKey: string;
-  url: string;
+  // url: string;
 }) => {
   const operationType = camelCase(type) as keyof typeof OPERATION_TYPES;
   const operationString = OPERATION_TYPES[operationType];
@@ -150,7 +150,7 @@ const HistoryItem = ({
     <HistoryItemEl
       onClick={() => {
         emitMetric(METRIC_NAMES.historyOpenItem);
-        openTab(`${url}/op/${id}`);
+        // openTab(`${url}/op/${id}`);
       }}
     >
       <HistoryColumnEl>
@@ -178,32 +178,25 @@ export const AccountHistory = ({
 }: {
   publicKey: string;
   operations: Array<FrontierOperation>;
-}) => {
-  const { isTestnet } = useSelector(settingsNetworkDetailsSelector);
-
-  const STELLAR_EXPERT_URL = `http://xdbexplorer.com//${
-    isTestnet ? "testnet" : "public"
-  }`;
-  return (
-    <>
-      <HistoryListEl>
-        {operations.map((operation: FrontierOperation) => (
-          <HistoryItem
-            key={operation.id}
-            operation={operation}
-            publicKey={publicKey}
-            url={STELLAR_EXPERT_URL}
-          />
-        ))}
-      </HistoryListEl>
-      <FullHistoryBtnEl
+}) => (
+  <>
+    <HistoryListEl>
+      {operations.map((operation: FrontierOperation) => (
+        <HistoryItem
+          key={operation.id}
+          operation={operation}
+          publicKey={publicKey}
+          // url={STELLAR_EXPERT_URL}
+        />
+      ))}
+    </HistoryListEl>
+    {/* <FullHistoryBtnEl
         onClick={() => {
           emitMetric(METRIC_NAMES.historyOpenFullHistory);
           openTab(`http://xdbexplorer.com/`);
         }}
       >
         Check full history on XDB Explorer
-      </FullHistoryBtnEl>
-    </>
-  );
-};
+      </FullHistoryBtnEl> */}
+  </>
+);

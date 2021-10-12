@@ -7,11 +7,9 @@ import { SubmitButton } from "popup/basics/Forms";
 
 import { fundAccount } from "popup/ducks/accountServices";
 
-import {
-  COLOR_PALETTE,
-  FONT_WEIGHT,
-  ROUNDED_CORNERS,
-} from "popup/constants/styles";
+import { COLOR_PALETTE, ROUNDED_CORNERS } from "popup/constants/styles";
+
+import rocketImg from "popup/assets/rocket.svg";
 
 const NotFundedWrapperEl = styled.section`
   background: ${COLOR_PALETTE.white};
@@ -20,7 +18,7 @@ const NotFundedWrapperEl = styled.section`
   padding: 1rem 1.25rem;
 `;
 
-const NotFundedCopyEl = styled.p`
+const NotFundedCopyEl = styled.span`
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin: 0;
@@ -35,18 +33,9 @@ const NotFundedHeaderEl = styled.h3`
   color: ${COLOR_PALETTE.primary};
   display: flex;
   font-size: 1rem;
-
-  &:before {
-    border: 2px solid ${COLOR_PALETTE.primary};
-    border-radius: 5rem;
-    content: "i";
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: ${FONT_WEIGHT.bold};
-    margin-right: 0.625rem;
-    padding: 0.0625rem;
-    text-align: center;
-    width: 1rem;
+  img {
+    width: 2rem;
+    height: auto;
   }
 `;
 
@@ -70,12 +59,19 @@ export const NotFundedMessage = ({
     <>
       <NotFundedWrapperEl>
         <NotFundedHeaderEl>
-          This DigitalBits address is not funded
+          <img src={rocketImg} alt="rocket" />
+          Activate your wallet to get started
         </NotFundedHeaderEl>
         <NotFundedCopyEl>
-          To create this account, fund it with a minimum of 1 XDB.
+          To start using this account, fund it with at minimum of 20 XDB.{" "}
+          <a
+            href="https://developer.digitalbits.io/guides/get-started/create-account.html"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Learn how to activate your wallet
+          </a>
         </NotFundedCopyEl>
-
         {isTestnet ? (
           <FriendBotCopyEl>
             You can fund this account on the test network using the Friendbot
@@ -83,16 +79,8 @@ export const NotFundedMessage = ({
             with 10,000 XDB on the test network.
           </FriendBotCopyEl>
         ) : null}
-        <NotFundedCopyEl>
-          <a
-            href="https://developer.digitalbits.io/guides/get-started/create-account.html"
-            rel="noreferrer"
-            target="_blank"
-          >
-            Learn more about account creation
-          </a>
-        </NotFundedCopyEl>
-        {isTestnet ? null : (
+
+        {/* {isTestnet ? null : (
           <NotFundedCopyEl>
             <a
               href="https://cryptobuyingtips.com/guides/how-to-buy-digitalbits-xdb"
@@ -102,7 +90,7 @@ export const NotFundedMessage = ({
               See how and where you can buy XDB
             </a>
           </NotFundedCopyEl>
-        )}
+        )} */}
       </NotFundedWrapperEl>
       {isTestnet ? (
         <Formik initialValues={{}} onSubmit={handleFundAccount}>

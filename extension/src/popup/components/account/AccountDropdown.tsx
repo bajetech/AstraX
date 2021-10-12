@@ -14,7 +14,7 @@ import ImportNewIcon from "popup/assets/import-new.svg";
 
 const AccountDropdownButtonEl = styled.div`
   align-items: center;
-  border: 1px solid ${COLOR_PALETTE.greyFaded};
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
   border-radius: 5rem;
   cursor: pointer;
   display: flex;

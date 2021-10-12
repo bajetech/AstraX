@@ -36,7 +36,7 @@ import { Header } from "popup/components/Header";
 import { Onboarding, HalfScreen } from "popup/components/Onboarding";
 import { PasswordRequirements } from "popup/components/PasswordRequirements";
 
-import ImportWalletIllo from "popup/assets/illo-backup-phrase.svg";
+import LockAndKeyIcon from "popup/assets/lock-and-key.png";
 import { PRIVACY_POLICY_URL, TERMS_OF_USE_URL } from "constants/misc";
 
 const HalfScreenEl = styled(HalfScreen)`
@@ -56,7 +56,7 @@ const IconImgEl = styled.img`
   height: 7.5rem;
 `;
 
-const IconEl = () => <IconImgEl src={ImportWalletIllo} alt="Import wallet" />;
+const IconEl = () => <IconImgEl src={LockAndKeyIcon} alt="Import wallet" />;
 
 export const RecoverAccount = () => {
   const publicKey = useSelector(publicKeySelector);

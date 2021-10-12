@@ -27,6 +27,7 @@ import { Menu } from "popup/components/Menu";
 
 import CopyColorIcon from "popup/assets/copy-color.svg";
 import QrCode from "popup/assets/qr-code.png";
+import HelpIcon from "popup/assets/help-icon.png";
 
 import "popup/metrics/authServices";
 
@@ -76,7 +77,21 @@ const QrButton = styled(BasicButton)`
   vertical-align: text-top;
 `;
 
+const HelpButton = styled(BasicButton)`
+  background: url(${HelpIcon});
+  background-size: cover;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  vertical-align: text-top;
+`;
+
 const DetailsLink = styled(Link)`
+  ${AccountHeaderButtonStyle}
+  vertical-align: middle;
+`;
+
+const HelpLink = styled.a`
   ${AccountHeaderButtonStyle}
   vertical-align: middle;
 `;
@@ -86,6 +101,12 @@ const CopiedToastWrapperEl = styled.div`
   padding: 0.5rem;
   position: absolute;
   right: 15rem;
+`;
+
+const AccountButtonsWrapper = styled.div`
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
 `;
 
 export const Account = () => {
@@ -119,27 +140,36 @@ export const Account = () => {
           setIsDropdownOpen={setIsDropdownOpen}
           publicKey={publicKey}
         />
-        <CopyToClipboard
-          text={publicKey}
-          onCopy={() => {
-            setIsCopied(true);
-            emitMetric(METRIC_NAMES.accountScreenCopyPublickKey);
-          }}
-        >
-          <CopyButtonEl>
-            <img src={CopyColorIcon} alt="copy button" /> Copy
-          </CopyButtonEl>
-        </CopyToClipboard>
-        <CopiedToastWrapperEl>
-          <Toast
-            message="Copied to your clipboard 👌"
-            isShowing={isCopied}
-            setIsShowing={setIsCopied}
-          />
-        </CopiedToastWrapperEl>
-        <DetailsLink to={ROUTES.viewPublicKey}>
-          <QrButton /> Details
-        </DetailsLink>
+        <AccountButtonsWrapper>
+          <CopyToClipboard
+            text={publicKey}
+            onCopy={() => {
+              setIsCopied(true);
+              emitMetric(METRIC_NAMES.accountScreenCopyPublickKey);
+            }}
+          >
+            <CopyButtonEl>
+              <img src={CopyColorIcon} alt="copy button" /> Copy
+            </CopyButtonEl>
+          </CopyToClipboard>
+          <CopiedToastWrapperEl>
+            <Toast
+              message="Copied to your clipboard 👌"
+              isShowing={isCopied}
+              setIsShowing={setIsCopied}
+            />
+          </CopiedToastWrapperEl>
+          <DetailsLink to={ROUTES.viewPublicKey}>
+            <QrButton /> Details
+          </DetailsLink>
+          <HelpLink
+            target="_blank"
+            rel="noreferrer"
+            href="https://astraxwallet.com/faq"
+          >
+            <HelpButton /> Help
+          </HelpLink>
+        </AccountButtonsWrapper>
       </AccountHeaderEl>
       <AccountEl>
         <AccountDetails />
