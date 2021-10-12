@@ -36,7 +36,7 @@ const HistoryItemEl = styled.li`
   color: ${COLOR_PALETTE.lightText};
   display: flex;
   justify-content: space-between;
-  height: 4rem;
+  height: 5rem;
   padding: 0 1rem 0 2rem;
 
   &: hover {
