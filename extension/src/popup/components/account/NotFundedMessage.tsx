@@ -65,7 +65,7 @@ export const NotFundedMessage = ({
         <NotFundedCopyEl>
           To start using this account, fund it with at minimum of 20 XDB.{" "}
           <a
-            href="https://developer.digitalbits.io/guides/get-started/create-account.html"
+            href="https://astraxwallet.com/activate"
             rel="noreferrer"
             target="_blank"
           >
