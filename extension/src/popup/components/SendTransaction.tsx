@@ -5,6 +5,8 @@ import { Formik } from "formik";
 import CheckMarkIcon from "popup/assets/check-mark-icon.png";
 import { store } from "popup/App";
 import { sendTransaction } from "popup/helpers/sendTransaction";
+import { useSelector } from "react-redux";
+import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
 
 const DestinationInput = styled.input`
   grid-column-end: auto;
@@ -76,15 +78,21 @@ const ConfirmationPageLink = styled.a`
   color: #391eda;
 `;
 
+const ErrorBox = styled.div`
+  color: red;
+`;
+
 interface Props {
   setIsSendTransaction: (arg: boolean) => void;
 }
 
 export const SendTransaction = ({ setIsSendTransaction }: Props) => {
+  const networkDetails = useSelector(settingsNetworkDetailsSelector);
   const sourceAccount = store.getState().auth.publicKey;
   const [isSubmited, setIsSubmited] = useState(false);
   const [destination, setDestination] = useState("");
   const [amount, setAmount] = useState("");
+  const [error, setError] = useState("");
 
   return isSubmited ? (
     <ConfirmationPageWrapper>
@@ -100,8 +108,14 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
     <Formik
       initialValues={{}}
       onSubmit={() => {
-        sendTransaction(sourceAccount, destination, amount);
-        setIsSubmited(true);
+        sendTransaction(
+          sourceAccount,
+          destination,
+          amount,
+          setIsSubmited,
+          setError,
+          networkDetails,
+        );
       }}
     >
       <Form>
@@ -109,7 +123,10 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           <span>To</span>
           <DestinationInput
             value={destination}
-            onChange={(e) => setDestination(e.target.value)}
+            onChange={(e) => {
+              setDestination(e.target.value);
+              setError("");
+            }}
             placeholder="Enter DigitalBits address"
           />
         </InputWrapper>
@@ -123,7 +140,10 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           <span>Amount</span>
           <DestinationInput
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e) => {
+              setAmount(e.target.value);
+              setError("");
+            }}
             placeholder="0.00"
           />
         </InputWrapper>
@@ -133,6 +153,7 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           </StyledSubmitButton>
           <StyledSubmitButton>Send</StyledSubmitButton>
         </InputWrapper>
+        <ErrorBox>{error}</ErrorBox>
       </Form>
     </Formik>
   );
