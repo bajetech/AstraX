@@ -49,7 +49,7 @@
     "pretty-quick": "^3.1.1",
     "prop-types": "^15.7.2",
     "punycode": "^2.1.1",
-    "qrcode.react": "^1.0.0",
+    "qrcode.react": "^1.0.1",
     "react": "^17.0.2",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^17.0.2",
