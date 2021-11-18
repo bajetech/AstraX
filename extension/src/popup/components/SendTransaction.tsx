@@ -82,6 +82,11 @@ const ErrorBox = styled.div`
   color: red;
 `;
 
+const LoadingBox = styled.div`
+  color: #000000;
+  text-align: center;
+`;
+
 interface Props {
   setIsSendTransaction: (arg: boolean) => void;
 }
@@ -89,10 +94,16 @@ interface Props {
 export const SendTransaction = ({ setIsSendTransaction }: Props) => {
   const networkDetails = useSelector(settingsNetworkDetailsSelector);
   const sourceAccount = store.getState().auth.publicKey;
+  const currentAccountIndex = store
+    .getState()
+    .auth.allAccounts.findIndex(
+      (i) => i.publicKey === store.getState().auth.publicKey,
+    );
   const [isSubmited, setIsSubmited] = useState(false);
   const [destination, setDestination] = useState("");
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return isSubmited ? (
     <ConfirmationPageWrapper>
@@ -115,6 +126,8 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           setIsSubmited,
           setError,
           networkDetails,
+          currentAccountIndex,
+          setLoading,
         );
       }}
     >
@@ -154,6 +167,7 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           <StyledSubmitButton>Send</StyledSubmitButton>
         </InputWrapper>
         <ErrorBox>{error}</ErrorBox>
+        <LoadingBox>{loading ? "Loading..." : ""}</LoadingBox>
       </Form>
     </Formik>
   );
