@@ -56,6 +56,17 @@ const StyledSubmitButton = styled(SubmitButton)`
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  ${({ disabled }) =>
+    disabled &&
+    `
+    background: #808080;
+    &:focus {
+      box-shadow: none
+    }
+    &:hover {
+      background: #808080;
+    }
+  `}
 `;
 
 const ConfirmationPageWrapper = styled.div`
@@ -164,7 +175,7 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
           <StyledSubmitButton onClick={() => setIsSendTransaction(false)}>
             Cancel
           </StyledSubmitButton>
-          <StyledSubmitButton>Send</StyledSubmitButton>
+          <StyledSubmitButton disabled={loading}>Send</StyledSubmitButton>
         </InputWrapper>
         <ErrorBox>{error}</ErrorBox>
         <LoadingBox>{loading ? "Loading..." : ""}</LoadingBox>

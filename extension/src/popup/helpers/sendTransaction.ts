@@ -45,8 +45,8 @@ export const sendTransaction = async (
     transaction.sign(DigitalBitsSdk.Keypair.fromSecret(keyPair.privateKey));
     const transactionResult = await server.submitTransaction(transaction);
     console.log(transactionResult);
-    setLoading(false);
     setIsSubmited(true);
+    setLoading(false);
   } catch (err: any) {
     setLoading(false);
     console.error(err);
