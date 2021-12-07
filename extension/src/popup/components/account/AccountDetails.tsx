@@ -19,6 +19,7 @@ import { AccountDetailsInterface, AssetIcons } from "@shared/api/types";
 
 import { AccountAssets } from "./AccountAssets";
 import { AccountHistory } from "./AccountHistory";
+import { AccountNfts } from "./AccountNfts";
 import { NotFundedMessage } from "./NotFundedMessage";
 
 const AccountHeaderEl = styled.section`
@@ -45,13 +46,19 @@ const AccountToggleBtnEl = styled(BasicButton)`
   font-weight: ${({ isActive }: AccountToggleBtnElProps) =>
     isActive ? FONT_WEIGHT.bold : FONT_WEIGHT.normal};
   margin: 0;
-  padding: 0 1rem 1.25rem 1rem;
+  padding: 0 0.9rem 1.25rem 0.9rem;
   width: 50%;
 
   &:hover {
     color: ${COLOR_PALETTE.primary};
   }
 `;
+
+enum accountDetailsTabsEnum {
+  accountAssets = "ACCOUNT_ASSETS",
+  history = "HISTORY",
+  nfts = "NFTS",
+}
 
 const defaultAccountDetails = {
   balances: null,
@@ -60,7 +67,9 @@ const defaultAccountDetails = {
 } as AccountDetailsInterface;
 
 export const AccountDetails = () => {
-  const [isAccountAssetsActive, setIsAccountAssetsActive] = useState(true);
+  const [accountDetailsTab, setAccountDetailsTab] = useState<
+    accountDetailsTabsEnum
+  >(accountDetailsTabsEnum.accountAssets);
   const [accountDetails, setAccountDetails] = useState(defaultAccountDetails);
   const [sortedBalances, setSortedBalances] = useState([] as Array<any>);
   const [hasIconFetchRetried, setHasIconFetchRetried] = useState(false);
@@ -70,6 +79,25 @@ export const AccountDetails = () => {
   );
   const publicKey = useSelector(publicKeySelector);
   const networkDetails = useSelector(settingsNetworkDetailsSelector);
+
+  const returnAccountDetailsBodyView = () => {
+    if (accountDetailsTab === accountDetailsTabsEnum.accountAssets) {
+      return (
+        <AccountAssets
+          sortedBalances={sortedBalances}
+          assetIcons={assetIcons}
+          retryAssetIconFetch={retryAssetIconFetch}
+        />
+      );
+    }
+    if (accountDetailsTab === accountDetailsTabsEnum.history) {
+      return <AccountHistory publicKey={publicKey} operations={operations} />;
+    }
+    if (accountDetailsTab === accountDetailsTabsEnum.nfts) {
+      return <AccountNfts />;
+    }
+    return null;
+  };
 
   const { isFunded, balances, operations } = accountDetails;
 
@@ -115,10 +143,8 @@ export const AccountDetails = () => {
     fetchAssetIcons();
   }, [balances, networkDetails]);
 
-  const handleDetailToggle = (isAssetsActive: boolean) => {
-    if (isAccountAssetsActive !== isAssetsActive) {
-      setIsAccountAssetsActive(isAssetsActive);
-    }
+  const handleDetailToggle = (detailsTab: accountDetailsTabsEnum) => {
+    setAccountDetailsTab(detailsTab);
   };
 
   /* if an image url 404's, this will try exactly once to rescrape the toml for a new url to cache */
@@ -152,29 +178,27 @@ export const AccountDetails = () => {
     <>
       <AccountHeaderEl>
         <AccountToggleBtnEl
-          isActive={isAccountAssetsActive}
-          onClick={() => handleDetailToggle(true)}
+          isActive={accountDetailsTab === accountDetailsTabsEnum.accountAssets}
+          onClick={() =>
+            handleDetailToggle(accountDetailsTabsEnum.accountAssets)
+          }
         >
           Account assets
         </AccountToggleBtnEl>
         <AccountToggleBtnEl
-          isActive={!isAccountAssetsActive}
-          onClick={() => handleDetailToggle(false)}
+          isActive={accountDetailsTab === accountDetailsTabsEnum.nfts}
+          onClick={() => handleDetailToggle(accountDetailsTabsEnum.nfts)}
+        >
+          NFTs
+        </AccountToggleBtnEl>
+        <AccountToggleBtnEl
+          isActive={accountDetailsTab === accountDetailsTabsEnum.history}
+          onClick={() => handleDetailToggle(accountDetailsTabsEnum.history)}
         >
           History
         </AccountToggleBtnEl>
       </AccountHeaderEl>
-      <AccountBodyEl>
-        {isAccountAssetsActive ? (
-          <AccountAssets
-            sortedBalances={sortedBalances}
-            assetIcons={assetIcons}
-            retryAssetIconFetch={retryAssetIconFetch}
-          />
-        ) : (
-          <AccountHistory publicKey={publicKey} operations={operations} />
-        )}
-      </AccountBodyEl>
+      <AccountBodyEl>{returnAccountDetailsBodyView()}</AccountBodyEl>
     </>
   ) : (
     <NotFundedMessage
