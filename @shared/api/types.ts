@@ -80,3 +80,9 @@ declare global {
     astraxApi: { [key: string]: any };
   }
 }
+
+export interface NFTInfo {
+  uniqKey: string;
+  nftTitle: string;
+  nftIcon: string;
+}

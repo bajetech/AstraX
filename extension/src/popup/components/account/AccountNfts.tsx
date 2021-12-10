@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, FC } from "react";
 import styled from "styled-components";
 
 import nftitemarrow from "popup/assets/nft-group-arrow.png";
-
-import nftexample from "popup/assets/nftexample.png";
+import { NFTInfo } from "@shared/api/types";
 
 const NftsWrapper = styled.div`
   padding-left: 0.75rem;
@@ -23,10 +22,11 @@ const NftIcon = styled.img`
   border-radius: 50%;
 `;
 
-const NftItemArrow = styled.img`
+const NftItemArrow = styled.img<{ isOpen: boolean }>`
   heigth: 6px;
   width: 10px;
   margin-left: 70px;
+  transform: rotate(${(props) => (props.isOpen ? "0deg" : "270deg")});
 `;
 
 const NftItem = styled.li`
@@ -57,6 +57,7 @@ const NftPreview = styled.img`
 
 const NftTitle = styled.p`
   margin-left: 15px;
+  flex-grow: 1;
 `;
 
 const NftItemWrapper = styled.div`
@@ -84,7 +85,11 @@ const NftItemView = ({ item }: any) => {
       <NftItem onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
         <NftIcon src={item.nftIcon} alt="Collection img" />
         <NftTitle>{item.nftTitle}</NftTitle>
-        <NftItemArrow src={nftitemarrow} alt="Collection img" />
+        <NftItemArrow
+          isOpen={isDropdownOpen}
+          src={nftitemarrow}
+          alt="Collection img"
+        />
       </NftItem>
       <NftDetails isDropdownOpen={isDropdownOpen}>
         <NftPreview src={item.nftIcon} alt="nft" />
@@ -94,24 +99,12 @@ const NftItemView = ({ item }: any) => {
   );
 };
 
-export const AccountNfts = () => {
-  const nfts = [
-    {
-      nftTitle: "Bubble Blobby by Jason Ting",
-      nftIcon: nftexample,
-    },
-    {
-      nftTitle: "Bubble Blobby by Jason Ting",
-      nftIcon: nftexample,
-    },
-  ];
-  return (
-    <NftsWrapper>
-      <NftsListWrapper>
-        {nfts.map((item) => (
-          <NftItemView item={item} />
-        ))}
-      </NftsListWrapper>
-    </NftsWrapper>
-  );
-};
+export const AccountNfts: FC<{ nfts: NFTInfo[] }> = ({ nfts }) => (
+  <NftsWrapper>
+    <NftsListWrapper>
+      {nfts.map((item) => (
+        <NftItemView item={item} key={item.uniqKey} />
+      ))}
+    </NftsListWrapper>
+  </NftsWrapper>
+);

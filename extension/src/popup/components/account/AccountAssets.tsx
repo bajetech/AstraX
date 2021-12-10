@@ -10,7 +10,7 @@ import { ScrollingView } from "popup/basics/AccountSubview";
 import XdbCurrencyLogo from "popup/assets/xdb-currency-logo.png";
 
 const AssetWrapper = styled.div`
-  ${ScrollingView}
+  ${ScrollingView};
   padding-left: 0.75rem;
 `;
 
@@ -75,21 +75,23 @@ export const AccountAssets = ({
   assetIcons: AssetIcons;
   sortedBalances: Array<any>;
   retryAssetIconFetch: (arg: { key: string; code: string }) => void;
-}) => (
-  <AssetWrapper>
-    {sortedBalances.map(({ token: { issuer, code }, total }) => (
-      <AssetEl key={code}>
-        <AssetIcon
-          assetIcons={assetIcons}
-          code={code}
-          issuerKey={issuer?.key}
-          retryAssetIconFetch={retryAssetIconFetch}
-        />
-        <LumenBalanceEl>
-          {new BigNumber(total).toString()}{" "}
-          <AssetTypeEl>{code === "XLM" ? "XDB" : code}</AssetTypeEl>
-        </LumenBalanceEl>
-      </AssetEl>
-    ))}
-  </AssetWrapper>
-);
+}) => {
+  return (
+    <AssetWrapper>
+      {sortedBalances.map(({ uniqKey, token: { issuer, code }, total }) => (
+        <AssetEl key={uniqKey}>
+          <AssetIcon
+            assetIcons={assetIcons}
+            code={code}
+            issuerKey={issuer?.key}
+            retryAssetIconFetch={retryAssetIconFetch}
+          />
+          <LumenBalanceEl>
+            {new BigNumber(total).toString()}{" "}
+            <AssetTypeEl>{code === "XLM" ? "XDB" : code}</AssetTypeEl>
+          </LumenBalanceEl>
+        </AssetEl>
+      ))}
+    </AssetWrapper>
+  );
+};

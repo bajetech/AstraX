@@ -17,6 +17,8 @@ import {
 
 import { AccountDetailsInterface, AssetIcons } from "@shared/api/types";
 
+import nftexample from "popup/assets/nftexample.png";
+
 import { AccountAssets } from "./AccountAssets";
 import { AccountHistory } from "./AccountHistory";
 import { AccountNfts } from "./AccountNfts";
@@ -72,6 +74,7 @@ export const AccountDetails = () => {
   >(accountDetailsTabsEnum.accountAssets);
   const [accountDetails, setAccountDetails] = useState(defaultAccountDetails);
   const [sortedBalances, setSortedBalances] = useState([] as Array<any>);
+  const [sortedNFTs, setSortedNFTs] = useState([] as Array<any>);
   const [hasIconFetchRetried, setHasIconFetchRetried] = useState(false);
   const [assetIcons, setAssetIcons] = useState({} as AssetIcons);
   const [isAccountFriendbotFunded, setIsAccountFriendbotFunded] = useState(
@@ -94,7 +97,7 @@ export const AccountDetails = () => {
       return <AccountHistory publicKey={publicKey} operations={operations} />;
     }
     if (accountDetailsTab === accountDetailsTabsEnum.nfts) {
-      return <AccountNfts />;
+      return <AccountNfts nfts={sortedNFTs} />;
     }
     return null;
   };
@@ -118,18 +121,28 @@ export const AccountDetails = () => {
   }, [publicKey, networkDetails, isAccountFriendbotFunded]);
 
   useEffect(() => {
-    const collection = [] as Array<any>;
+    const collectionBalances = [] as Array<any>;
+    const collectionNFTs = [] as Array<any>;
     if (!balances) return;
 
     // put XDB at the top of the balance list
-    Object.entries(balances).forEach(([k, v]) => {
+    Object.entries(balances).forEach(([k, v], i) => {
+      // Add uniq key for passing as a key prop for react performance
+      const balanceWithKey = { uniqKey: k + i, ...v };
       if (k === "native") {
-        collection.unshift(v);
+        collectionBalances.unshift(balanceWithKey);
+      } else if (+v.total.toString() === 0.0000001) {
+        collectionNFTs.push({
+          uniqKey: k + i,
+          nftTitle: v.token.code,
+          nftIcon: nftexample,
+        });
       } else {
-        collection.push(v);
+        collectionBalances.push(balanceWithKey);
       }
     });
-    setSortedBalances(collection);
+    setSortedBalances(collectionBalances);
+    setSortedNFTs(collectionNFTs);
 
     // get each asset's icon
     const fetchAssetIcons = async () => {
