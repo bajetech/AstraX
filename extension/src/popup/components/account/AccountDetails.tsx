@@ -15,7 +15,11 @@ import {
   retryAssetIcon,
 } from "@shared/api/internal";
 
-import { AccountDetailsInterface, AssetIcons } from "@shared/api/types";
+import {
+  AccountDetailsInterface,
+  AssetIcons,
+  NFTInfo,
+} from "@shared/api/types";
 
 import nftexample from "popup/assets/nftexample.png";
 
@@ -74,7 +78,7 @@ export const AccountDetails = () => {
   >(accountDetailsTabsEnum.accountAssets);
   const [accountDetails, setAccountDetails] = useState(defaultAccountDetails);
   const [sortedBalances, setSortedBalances] = useState([] as Array<any>);
-  const [sortedNFTs, setSortedNFTs] = useState([] as Array<any>);
+  const [sortedNFTs, setSortedNFTs] = useState<NFTInfo[]>([]);
   const [hasIconFetchRetried, setHasIconFetchRetried] = useState(false);
   const [assetIcons, setAssetIcons] = useState({} as AssetIcons);
   const [isAccountFriendbotFunded, setIsAccountFriendbotFunded] = useState(
@@ -122,7 +126,7 @@ export const AccountDetails = () => {
 
   useEffect(() => {
     const collectionBalances = [] as Array<any>;
-    const collectionNFTs = [] as Array<any>;
+    const collectionNFTs: NFTInfo[] = [];
     if (!balances) return;
 
     // put XDB at the top of the balance list
