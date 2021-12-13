@@ -19,7 +19,7 @@ import {
 } from "popup/constants/styles";
 import { METRIC_NAMES } from "popup/constants/metricsNames";
 
-import { navigateTo, openTab } from "popup/helpers/navigate";
+import { navigateTo } from "popup/helpers/navigate";
 
 import {
   accountNameSelector,
@@ -34,7 +34,7 @@ import CheckIcon from "popup/assets/check.svg";
 import CloseIcon from "popup/assets/icon-close-color.svg";
 import CopyIcon from "popup/assets/copy-color.svg";
 import PencilIcon from "popup/assets/pencil.svg";
-import StellarExpertIcon from "popup/assets/icon-stellar-expert.svg";
+// import StellarExpertIcon from "popup/assets/icon-stellar-expert.svg";
 
 const QrEl = styled.div`
   position: relative;
@@ -227,7 +227,7 @@ export const ViewPublicKey = () => {
             setIsShowing={setIsCopied}
           />
         </CopiedToastWrapperEl>
-        <LinkButton
+        {/* <LinkButton
           onClick={() => {
             openTab(`http://xdbexplorer.com/`);
             emitMetric(METRIC_NAMES.viewPublicKeyClickedStellarExpert);
@@ -235,7 +235,7 @@ export const ViewPublicKey = () => {
         >
           <img src={StellarExpertIcon} alt="view on StellarExpert button" />
           View on XDB Explorer
-        </LinkButton>
+        </LinkButton> */}
       </ButtonsEl>
     </QrEl>
   );
