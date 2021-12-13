@@ -75,23 +75,21 @@ export const AccountAssets = ({
   assetIcons: AssetIcons;
   sortedBalances: Array<any>;
   retryAssetIconFetch: (arg: { key: string; code: string }) => void;
-}) => {
-  return (
-    <AssetWrapper>
-      {sortedBalances.map(({ uniqKey, token: { issuer, code }, total }) => (
-        <AssetEl key={uniqKey}>
-          <AssetIcon
-            assetIcons={assetIcons}
-            code={code}
-            issuerKey={issuer?.key}
-            retryAssetIconFetch={retryAssetIconFetch}
-          />
-          <LumenBalanceEl>
-            {new BigNumber(total).toString()}{" "}
-            <AssetTypeEl>{code === "XLM" ? "XDB" : code}</AssetTypeEl>
-          </LumenBalanceEl>
-        </AssetEl>
-      ))}
-    </AssetWrapper>
-  );
-};
+}) => (
+  <AssetWrapper>
+    {sortedBalances.map(({ uniqKey, token: { issuer, code }, total }) => (
+      <AssetEl key={uniqKey}>
+        <AssetIcon
+          assetIcons={assetIcons}
+          code={code}
+          issuerKey={issuer?.key}
+          retryAssetIconFetch={retryAssetIconFetch}
+        />
+        <LumenBalanceEl>
+          {new BigNumber(total).toString()}{" "}
+          <AssetTypeEl>{code === "XLM" ? "XDB" : code}</AssetTypeEl>
+        </LumenBalanceEl>
+      </AssetEl>
+    ))}
+  </AssetWrapper>
+);
