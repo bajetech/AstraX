@@ -22,10 +22,15 @@ const NotFundedCopyEl = styled.span`
   font-size: 0.875rem;
   line-height: 1.375rem;
   margin: 0;
+  a {
+    display: block;
+    margin-top: 0.5rem;
+  }
 `;
 
 const FriendBotCopyEl = styled(NotFundedCopyEl)`
   margin: 0.5rem 0;
+  display: block;
 `;
 
 const NotFundedHeaderEl = styled.h3`
@@ -69,7 +74,7 @@ export const NotFundedMessage = ({
             rel="noreferrer"
             target="_blank"
           >
-            Learn how to activate your wallet
+            Learn how to activate your wallet.
           </a>
         </NotFundedCopyEl>
         {isTestnet ? (
