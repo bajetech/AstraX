@@ -196,6 +196,9 @@ export const Account = () => {
           <HelpLink to="#">
             <HelpButton /> Help
           </HelpLink>
+          <DetailsLink to={ROUTES.addCustomAsset}>
+            <QrButton /> Add custom asset
+          </DetailsLink>
         </AccountButtonsWrapper>
       </AccountHeaderEl>
       <AccountEl>

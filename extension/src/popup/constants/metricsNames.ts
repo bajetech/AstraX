@@ -68,4 +68,6 @@ export const METRIC_NAMES = {
   viewPublicKeyAccountRenamed: "viewPublicKey: renamed account",
   viewPublicKeyCopy: "viewPublicKey: copied public key",
   viewPublicKeyClickedStellarExpert: "viewPublicKey: clicked StellarExpert",
+
+  addCustomAsset: "add custom asset",
 };

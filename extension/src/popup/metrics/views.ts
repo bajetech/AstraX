@@ -28,6 +28,7 @@ const routeToEventName = {
   [ROUTES.settings]: METRIC_NAMES.viewSettings,
   [ROUTES.viewPublicKey]: METRIC_NAMES.viewPublicKey,
   [ROUTES.debug]: METRIC_NAMES.viewDebug,
+  [ROUTES.addCustomAsset]: METRIC_NAMES.addCustomAsset,
 };
 
 registerHandler<AppState>(navigate, (_, a) => {
