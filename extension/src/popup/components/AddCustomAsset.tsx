@@ -82,6 +82,7 @@ const ConfirmationPageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto auto auto;
   justify-content: center;
+  padding-top: 5rem;
 `;
 
 const ConfirmationPageTitle = styled.div`
