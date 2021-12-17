@@ -133,15 +133,18 @@ export const AccountDetails = () => {
     Object.entries(balances).forEach(([k, v], i) => {
       // Add uniq key for passing as a key prop for react performance
       const balanceWithKey = { uniqKey: k + i, ...v };
+      const totalValue: number = +v.total.toString();
+
       if (k === "native") {
         collectionBalances.unshift(balanceWithKey);
-      } else if (+v.total.toString() === 0.0000001) {
+      } else if (totalValue === 0.0000001) {
         collectionNFTs.push({
           uniqKey: k + i,
           nftTitle: v.token.code,
           nftIcon: nftexample,
         });
-      } else {
+      } else if (totalValue !== 0) {
+        // filter empty balance on NFT
         collectionBalances.push(balanceWithKey);
       }
     });
