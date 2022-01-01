@@ -15,7 +15,7 @@
     "@bajetech/digitalbits-hd-wallet": "^1.2.0",
     "@reduxjs/toolkit": "^1.6.1",
     "@sentry/browser": "^6.13.2",
-    "@sentry/tracing": "^6.13.2",
+    "@sentry/tracing": "^6.16.1",
     "@shared/api": "1.0.0",
     "@shared/constants": "1.0.0",
     "@shared/helpers": "1.0.0",
