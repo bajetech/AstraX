@@ -29,8 +29,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body, html {
-    height: ${POPUP_HEIGHT}px;
     width: ${POPUP_WIDTH}px;
+    height: ${POPUP_HEIGHT}px;
+    // DO NOT REMOVE font-size
+    // since we use rem in layout, we need to make sure that
+    // spacings, widths and heights are the same for all browsers and browser's engines
+    // rem - it's a percentage of html font-size, if the latest is not set
+    // it use the default browser font-size, it could be 16px 14px, etc
+    font-size: 16px;
   }
 
   #root {
@@ -53,7 +59,7 @@ const GlobalStyle = createGlobalStyle`
 const RouteWrapperEl = styled.div`
   background: ${COLOR_PALETTE.background};
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
 `;
 
 const rootReducer = combineReducers({
