@@ -37,7 +37,8 @@ const HistoryItemEl = styled.li`
   display: flex;
   justify-content: space-between;
   height: 5rem;
-  padding: 0 1rem 0 2rem;
+  padding: 0 1rem;
+  align-items: center;
 
   &: hover {
     background: ${COLOR_PALETTE.white};
@@ -61,11 +62,11 @@ const HistoryColumnRowEl = styled.div`
   margin-top: 0.5rem;
 `;
 
-const PaymentEl = styled(HistoryColumnRowEl)`
+const PaymentEl = styled.div`
   font-size: 0.8125rem;
 `;
 
-const TimestampEl = styled(HistoryColumnRowEl)`
+const TimestampEl = styled.div`
   color: ${COLOR_PALETTE.grey};
   font-size: 0.75rem;
 `;
