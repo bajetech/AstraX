@@ -12,6 +12,10 @@ import AccountDropdownIcon from "popup/assets/icon-dropdown-arrow.svg";
 import CreateNewIcon from "popup/assets/create-new.svg";
 import ImportNewIcon from "popup/assets/import-new.svg";
 
+const AccountDropdownWrapper = styled.section`
+  position: relative;
+`;
+
 const AccountDropdownButtonEl = styled.div`
   align-items: center;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -29,7 +33,6 @@ const AccountDropdownArrowEl = styled.img`
 `;
 
 interface AccountDropdownOptionsProps {
-  dropdownCount: number;
   isDropdownOpen: boolean;
 }
 
@@ -37,24 +40,22 @@ const AccountDropdownOptionsEl = styled.ul`
   background: ${COLOR_PALETTE.white};
   border-radius: 0.3125rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.06);
-  height: auto;
-  max-height: ${({
-    dropdownCount,
-    isDropdownOpen,
-  }: AccountDropdownOptionsProps) =>
-    isDropdownOpen ? `${dropdownCount * 6.5}rem` : "0"};
+  max-height: 396px;
+  height: ${({ isDropdownOpen }: AccountDropdownOptionsProps) =>
+    isDropdownOpen ? `auto` : "0"};
   list-style-type: none;
   margin: 0;
-  overflow: hidden;
+  overflow: hidden auto;
   padding: 0;
   position: absolute;
   transition: max-height 0.3s ease-out;
+  top: 82px;
 `;
 
 const AccountDropdownAccountEl = styled.li`
   border-bottom: 1px solid ${COLOR_PALETTE.greyFaded};
   display: flex;
-  padding: 0.75rem 0.2rem 0.75rem 1rem;
+  padding: 12px 8px 12px 16px;
   width: 16rem;
 `;
 
@@ -70,7 +71,7 @@ const AccountTagEl = styled.span`
 `;
 
 const AccountDropdownOptionEl = styled.li`
-  padding: 0.75rem 1rem;
+  padding: 12px;
 `;
 
 const AccountDropdownOptionLinkEl = styled(Link)`
@@ -103,7 +104,7 @@ export const AccountDropdown = ({
   setIsDropdownOpen,
   publicKey,
 }: AccountDropdownProps) => (
-  <section ref={accountDropDownRef}>
+  <AccountDropdownWrapper ref={accountDropDownRef}>
     <AccountDropdownButtonEl onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
       <AccountListIdenticon
         active
@@ -112,10 +113,7 @@ export const AccountDropdown = ({
       />
       <AccountDropdownArrowEl src={AccountDropdownIcon} alt="dropdown icon" />
     </AccountDropdownButtonEl>
-    <AccountDropdownOptionsEl
-      dropdownCount={allAccounts.length}
-      isDropdownOpen={isDropdownOpen}
-    >
+    <AccountDropdownOptionsEl isDropdownOpen={isDropdownOpen}>
       {allAccounts.length > 1 &&
         allAccounts.map(
           ({ publicKey: accountPublicKey, name: accountName, imported }) => {
@@ -160,5 +158,5 @@ export const AccountDropdown = ({
         </AccountDropdownOptionLinkEl>
       </AccountDropdownOptionEl>
     </AccountDropdownOptionsEl>
-  </section>
+  </AccountDropdownWrapper>
 );
