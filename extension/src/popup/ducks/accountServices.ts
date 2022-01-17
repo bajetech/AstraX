@@ -491,13 +491,17 @@ export const publicKeySelector = createSelector(
 );
 
 export const accountNameSelector = createSelector(
-  publicKeySelector,
-  allAccountsSelector,
-  (publicKey, allAccounts) => {
-    const { name } = allAccounts.find(
-      ({ publicKey: accountPublicKey }) => accountPublicKey === publicKey,
-    ) || { publicKey: "", name: "" };
+  authSelector,
+  (auth: InitialState) => {
+    let name = "";
 
+    auth.allAccounts.some((element) => {
+      if (element.publicKey === auth.publicKey) {
+        name = element.name;
+        return true;
+      }
+      return false;
+    });
     return name;
   },
 );

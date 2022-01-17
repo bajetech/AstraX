@@ -70,6 +70,7 @@ const AccountNumberEl = styled.h3`
   max-height: 1rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 `;
 
 const PublicKeyEl = styled.span`
