@@ -17,6 +17,7 @@ const DestinationInput = styled.input`
   font-size: 11px;
   text-align: left;
   padding-left: 15px;
+  padding-right: 15px;
   &:focus {
     outline: none;
   }
@@ -80,13 +81,9 @@ const ConfirmationPageTitle = styled.div`
   margin-bottom: 60px;
   text-align: center;
   img {
-    height: 42px;
+    height: 24px;
     width: auto;
   }
-`;
-
-const ConfirmationPageLink = styled.a`
-  color: #391eda;
 `;
 
 const ErrorBox = styled.div`
@@ -124,7 +121,6 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
       <StyledSubmitButton onClick={() => setIsSendTransaction(false)}>
         Go home
       </StyledSubmitButton>
-      <ConfirmationPageLink>View on xdbExplorer</ConfirmationPageLink>
     </ConfirmationPageWrapper>
   ) : (
     <Formik
