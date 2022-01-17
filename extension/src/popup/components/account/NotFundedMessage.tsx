@@ -14,8 +14,8 @@ import rocketImg from "popup/assets/rocket.svg";
 const NotFundedWrapperEl = styled.section`
   background: ${COLOR_PALETTE.white};
   border-radius: ${ROUNDED_CORNERS};
-  margin: 0 1rem 1.2rem 1rem;
-  padding: 1rem 1.25rem;
+  margin: 1.2rem 1rem;
+  padding: 0.85rem 1.25rem 1rem;
 `;
 
 const NotFundedCopyEl = styled.span`
