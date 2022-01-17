@@ -143,15 +143,6 @@ export const Menu = () => {
               <a
                 rel="noreferrer"
                 target="_blank"
-                href="https://astraxwallet.com/faq"
-              >
-                Help
-              </a>
-            </SlideoutNavListItemEl>
-            <SlideoutNavListItemEl>
-              <a
-                rel="noreferrer"
-                target="_blank"
                 href="https://zpezxd0mv2j.typeform.com/to/xxikD0hy"
               >
                 Leave Feedback

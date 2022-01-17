@@ -29,7 +29,6 @@ import { Menu } from "popup/components/Menu";
 import CopyColorIcon from "popup/assets/copy-color.svg";
 import QrCode from "popup/assets/qr-code.png";
 import SendIcon from "popup/assets/send-icon.png";
-import HelpIcon from "popup/assets/help-icon.png";
 import CloseIcon from "popup/assets/close-icon.png";
 
 import "popup/metrics/authServices";
@@ -99,21 +98,7 @@ const CloseButton = styled(BasicButton)`
   }
 `;
 
-const HelpButton = styled(BasicButton)`
-  background: url(${HelpIcon});
-  background-size: cover;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  vertical-align: text-top;
-`;
-
 const DetailsLink = styled(Link)`
-  ${AccountHeaderButtonStyle}
-  vertical-align: middle;
-`;
-
-const HelpLink = styled(Link)`
   ${AccountHeaderButtonStyle}
   vertical-align: middle;
 `;
@@ -192,9 +177,6 @@ export const Account = () => {
           <SendButton onClick={() => setIsSendTransaction(true)}>
             <img src={SendIcon} alt="send button" /> Send
           </SendButton>
-          <HelpLink to="#">
-            <HelpButton /> Help
-          </HelpLink>
         </AccountButtonsWrapper>
       </AccountHeaderEl>
       <AccountEl>

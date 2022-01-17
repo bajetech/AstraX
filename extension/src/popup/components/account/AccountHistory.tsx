@@ -17,8 +17,6 @@ import { emitMetric } from "helpers/metrics";
 
 import { KeyIdenticon } from "popup/components/identicons/KeyIdenticon";
 
-import IconOpenExternal from "popup/assets/icon-open-external.svg";
-
 const HistoryListEl = styled.ul`
   list-style-type: none;
   margin: 0;
@@ -168,7 +166,6 @@ const HistoryItem = ({
         </HistoryColumnRowEl>
       </HistoryColumnEl>
       <PaymentColumnEl>{renderPaymentComponent()}</PaymentColumnEl>
-      <OpenExternalIconEl src={IconOpenExternal} alt="open in stellar.expert" />
     </HistoryItemEl>
   );
 };
