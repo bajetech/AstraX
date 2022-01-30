@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## v1.0.5
+
+- Removes dependency on the BalanceMap type from `@stellar/wallet-sdk`.
+- Updates dependencies
+
 ## v1.0.4
 
 - NO code changes.
