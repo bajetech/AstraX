@@ -1,9 +1,66 @@
-import { Frontier } from "xdb-digitalbits-sdk";
-import { Types } from "@stellar/wallet-sdk";
-
+import BigNumber from "bignumber.js";
+import { AssetType, Frontier } from "xdb-digitalbits-sdk";
 import { SERVICE_TYPES, EXTERNAL_SERVICE_TYPES } from "../constants/services";
 import { APPLICATION_STATE } from "../constants/applicationState";
 import { NetworkDetails } from "../helpers/digitalbits";
+
+/*
+ * Let's copy over types we need from '@bajetech/digitalbits-wallet-sdk' instead
+ * of importing the package itself. This let's us easily avoid a circular
+ * dependency since @bajetech/digitalbits-wallet-sdk needs to import
+ * @bajetech/astrax-api.
+ */
+interface Issuer {
+  key: string;
+  name?: string;
+  url?: string;
+  hostName?: string;
+}
+
+interface NativeToken {
+  type: AssetType;
+  code: string;
+}
+
+interface AssetToken {
+  type: AssetType;
+  code: string;
+  issuer: Issuer;
+  anchorAsset?: string;
+  numAccounts?: BigNumber;
+  amount?: BigNumber;
+  bidCount?: BigNumber;
+  askCount?: BigNumber;
+  spread?: BigNumber;
+}
+
+type Token = NativeToken | AssetToken;
+
+interface Balance {
+  token: Token;
+
+  // for non-native tokens, this should be total - sellingLiabilities
+  // for native, it should also subtract the minimumBalance
+  available: BigNumber;
+  total: BigNumber;
+  buyingLiabilities: BigNumber;
+  sellingLiabilities: BigNumber;
+}
+
+interface AssetBalance extends Balance {
+  token: AssetToken;
+  sponsor?: string;
+}
+
+interface NativeBalance extends Balance {
+  token: NativeToken;
+  minimumBalance: BigNumber;
+}
+
+interface BalanceMap {
+  [key: string]: AssetBalance | NativeBalance;
+  native: NativeBalance;
+}
 
 export interface Response {
   error: string;
@@ -60,7 +117,7 @@ export interface AssetIcons {
   [code: string]: string;
 }
 
-export type Balances = Types.BalanceMap | null;
+export type Balances = BalanceMap | null;
 
 /* eslint-disable camelcase */
 export type FrontierOperation = Frontier.PaymentOperationResponse & {
