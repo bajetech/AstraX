@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Form, SubmitButton } from "popup/basics/Forms";
 import { Formik } from "formik";
@@ -7,6 +7,8 @@ import { store } from "popup/App";
 import { sendTransaction } from "popup/helpers/sendTransaction";
 import { useSelector } from "react-redux";
 import { settingsNetworkDetailsSelector } from "popup/ducks/settings";
+import { getAccountDetails } from "@shared/api/internal";
+import { sendNFT } from "popup/helpers/sendNFT";
 
 const DestinationInput = styled.input`
   grid-column-end: auto;
@@ -115,6 +117,29 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
   const [amount, setAmount] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [balance, setBalance] = useState<any>({});
+  const [chosenAsset, setChosenAsset] = useState("XDB");
+
+  useEffect(() => {
+    const fetchAccountDetails = async () => {
+      try {
+        console.log("Network details are: ", networkDetails);
+        const res = await getAccountDetails({
+          publicKey: sourceAccount,
+          networkDetails,
+        });
+        const { balances } = res;
+        setBalance(balances);
+        console.log(res);
+      } catch (e) {
+        console.error(e);
+      }
+    };
+
+    if (networkDetails && networkDetails.networkName !== undefined) {
+      fetchAccountDetails();
+    }
+  }, [sourceAccount, networkDetails]);
 
   return isSubmited ? (
     <ConfirmationPageWrapper>
@@ -130,16 +155,31 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
     <Formik
       initialValues={{}}
       onSubmit={() => {
-        sendTransaction(
-          sourceAccount,
-          destination,
-          amount,
-          setIsSubmited,
-          setError,
-          networkDetails,
-          currentAccountIndex,
-          setLoading,
-        );
+        if (chosenAsset === "XDB") {
+          sendTransaction(
+            sourceAccount,
+            destination,
+            amount,
+            setIsSubmited,
+            setError,
+            networkDetails,
+            currentAccountIndex,
+            setLoading,
+          );
+        } else {
+          const asset = JSON.parse(chosenAsset);
+          sendNFT(
+            sourceAccount,
+            destination,
+            amount,
+            setError,
+            setIsSubmited,
+            networkDetails,
+            currentAccountIndex,
+            setLoading,
+            asset,
+          );
+        }
       }}
     >
       <Form>
@@ -156,8 +196,23 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
         </InputWrapper>
         <InputWrapper>
           <span>Select token</span>
-          <TokenSelect>
-            <option value="XDB">XDB</option>
+          <TokenSelect
+            onChange={(e) => setChosenAsset(e.target.value)}
+            value={chosenAsset}
+          >
+            <option key="xdb" value="XDB">
+              XDB
+            </option>
+            {Object.entries(balance).map(([k, v]) => {
+              if (k !== "native") {
+                return (
+                  <option key={k} value={JSON.stringify((v as any).token)}>
+                    {(v as any)?.token.code}
+                  </option>
+                );
+              }
+              return null;
+            })}
           </TokenSelect>
         </InputWrapper>
         <InputWrapper>

@@ -16,4 +16,5 @@ export enum ROUTES {
   displayBackupPhrase = "/display-backup-phrase",
   viewPublicKey = "/view-public-key",
   settings = "/settings",
+  addCustomAsset = "/add-custom-asset",
 }

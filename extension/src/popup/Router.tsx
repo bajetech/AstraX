@@ -47,6 +47,7 @@ import { Settings } from "popup/views/Settings";
 
 import "popup/metrics/views";
 import { DEV_SERVER } from "@shared/constants/services";
+import { AddCustomAsset } from "./components/AddCustomAsset";
 
 const PublicKeyRoute = (props: RouteProps) => {
   const location = useLocation();
@@ -236,6 +237,9 @@ export const Router = () => {
         </PublicKeyRoute>
         <Route path={ROUTES.accountCreator}>
           <AccountCreator />
+        </Route>
+        <Route path={ROUTES.addCustomAsset}>
+          <AddCustomAsset />
         </Route>
         <Route path={ROUTES.recoverAccount}>
           <RecoverAccount />
