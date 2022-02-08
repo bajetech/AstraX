@@ -21,8 +21,7 @@ import {
   NFTInfo,
 } from "@shared/api/types";
 
-import nftexample from "popup/assets/nftexample.png";
-
+import { getNftMedia } from "popup/helpers/getNftMedia";
 import { AccountAssets } from "./AccountAssets";
 import { AccountHistory } from "./AccountHistory";
 import { AccountNfts } from "./AccountNfts";
@@ -130,7 +129,7 @@ export const AccountDetails = () => {
     if (!balances) return;
 
     // put XDB at the top of the balance list
-    Object.entries(balances).forEach(([k, v], i) => {
+    Object.entries(balances).forEach(async ([k, v], i) => {
       // Add uniq key for passing as a key prop for react performance
       const balanceWithKey = { uniqKey: k + i, ...v };
       const totalValue: number = +v.total.toString();
@@ -141,7 +140,7 @@ export const AccountDetails = () => {
         collectionNFTs.push({
           uniqKey: k + i,
           nftTitle: v.token.code,
-          nftIcon: nftexample,
+          nftIcon: await getNftMedia(k.split(":")[1]),
         });
       } else if (totalValue !== 0) {
         // filter empty balance on NFT
