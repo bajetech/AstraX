@@ -204,7 +204,7 @@ export const SendTransaction = ({ setIsSendTransaction }: Props) => {
               XDB
             </option>
             {Object.entries(balance).map(([k, v]) => {
-              if (k !== "native") {
+              if (k !== "native" && +(v as any)?.total !== 0) {
                 return (
                   <option key={k} value={JSON.stringify((v as any).token)}>
                     {(v as any)?.token.code}

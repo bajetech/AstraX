@@ -34,23 +34,6 @@ const NftItem = styled.li`
   align-items: center;
 `;
 
-const SendButton = styled.button`
-  background: #000000;
-  border-radius: 10px;
-  color: #ffffff;
-  font-family: Mulish;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  text-align: center;
-  letter-spacing: -0.02em;
-  border: none;
-  width: 168px;
-  padding: 5px 0;
-  margin-bottom: 20px;
-`;
-
 const NftPreview = styled.img`
   margin-bottom: 10px;
 `;
@@ -64,6 +47,10 @@ const NftItemWrapper = styled.div`
   border-bottom: 1px solid #d3d5da;
 `;
 
+const NftIssuer = styled.span`
+  font-size: 12px;
+`;
+
 interface NftDetailsProps {
   isDropdownOpen: boolean;
 }
@@ -71,6 +58,7 @@ interface NftDetailsProps {
 const NftDetails = styled.div`
   flex-direction: column;
   align-items: center;
+  max-width: 400px;
   max-height: ${({ isDropdownOpen }: NftDetailsProps) =>
     isDropdownOpen ? `500px` : "0"};
   display: ${({ isDropdownOpen }: NftDetailsProps) =>
@@ -93,7 +81,7 @@ const NftItemView = ({ item }: any) => {
       </NftItem>
       <NftDetails isDropdownOpen={isDropdownOpen}>
         <NftPreview src={item.nftIcon} alt="nft" />
-        <SendButton>Send</SendButton>
+        <NftIssuer>{item.uniqKey.split(":")[1].slice(0, -1)}</NftIssuer>
       </NftDetails>
     </NftItemWrapper>
   );
