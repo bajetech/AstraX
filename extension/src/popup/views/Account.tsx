@@ -110,12 +110,18 @@ const HelpButton = styled(BasicButton)`
 `;
 
 const DetailsLink = styled(Link)`
-  ${AccountHeaderButtonStyle}
+  ${AccountHeaderButtonStyle};
   vertical-align: middle;
 `;
 
+const AddAssetLink = styled(DetailsLink)`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  justify-self: center;
+`;
+
 const HelpLink = styled(Link)`
-  ${AccountHeaderButtonStyle}
+  ${AccountHeaderButtonStyle};
   vertical-align: middle;
 `;
 
@@ -196,9 +202,9 @@ export const Account = () => {
           <HelpLink to="#">
             <HelpButton /> Help
           </HelpLink>
-          <DetailsLink to={ROUTES.addCustomAsset}>
-            <QrButton /> Add custom asset
-          </DetailsLink>
+          <AddAssetLink to={ROUTES.addCustomAsset}>
+            Add custom asset
+          </AddAssetLink>
         </AccountButtonsWrapper>
       </AccountHeaderEl>
       <AccountEl>
