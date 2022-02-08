@@ -51,7 +51,7 @@ const AccountToggleBtnEl = styled(BasicButton)`
   font-weight: ${({ isActive }: AccountToggleBtnElProps) =>
     isActive ? FONT_WEIGHT.bold : FONT_WEIGHT.normal};
   margin: 0;
-  padding: 0 0.9rem 1.25rem 0.9rem;
+  padding: 22px 8px 20px 8px;
   width: 50%;
 
   &:hover {

@@ -5,14 +5,7 @@ import { BigNumber } from "bignumber.js";
 import { COLOR_PALETTE, FONT_WEIGHT } from "popup/constants/styles";
 import { AssetIcons } from "@shared/api/types";
 
-import { ScrollingView } from "popup/basics/AccountSubview";
-
 import XdbCurrencyLogo from "popup/assets/xdb-currency-logo.png";
-
-const AssetWrapper = styled.div`
-  ${ScrollingView};
-  padding-left: 0.75rem;
-`;
 
 const AssetEl = styled.div`
   align-items: center;
@@ -76,7 +69,7 @@ export const AccountAssets = ({
   sortedBalances: Array<any>;
   retryAssetIconFetch: (arg: { key: string; code: string }) => void;
 }) => (
-  <AssetWrapper>
+  <>
     {sortedBalances.map(({ uniqKey, token: { issuer, code }, total }) => (
       <AssetEl key={uniqKey}>
         <AssetIcon
@@ -91,5 +84,5 @@ export const AccountAssets = ({
         </LumenBalanceEl>
       </AssetEl>
     ))}
-  </AssetWrapper>
+  </>
 );
