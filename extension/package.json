@@ -32,7 +32,7 @@
     "@types/react-redux": "^7.1.7",
     "@types/react-router-dom": "^5.3.0",
     "@types/redux": "^3.6.0",
-    "@types/webextension-polyfill": "^0.8.0",
+    "@types/webextension-polyfill": "^0.9.0",
     "@types/yup": "^0.29.13",
     "bignumber.js": "^9.0.1",
     "buffer": "^6.0.3",
@@ -62,7 +62,7 @@
     "svg-url-loader": "^7.1.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "tslib": "^2.3.1",
-    "webextension-polyfill": "^0.8.0",
+    "webextension-polyfill": "^0.9.0",
     "xdb-digitalbits-sdk": "^8.2.2",
     "yup": "^0.32.9"
   }

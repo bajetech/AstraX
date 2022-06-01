@@ -1889,10 +1889,10 @@
   resolved "https://registry.yarnpkg.com/@types/urijs/-/urijs-1.19.13.tgz#0bd025b65df8ee5f038bbf6f1cb2e95160b49a56"
   integrity sha512-Wg/E8Q+ylkR6JElTwOcjG7kM99/iJz28E9RKr8syOxssRs3gWchsziUkb+Nr254aUBWHY0QiScGAfIx4lKI3/g==
 
-"@types/webextension-polyfill@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.8.0.tgz#6c40740eec531de412f6ceba27bb2cad4a24907c"
-  integrity sha512-usmQx2snpNkVl2VoOGZCdrPnfHL+CjuSFy84ZdTwQ2b2cvyygF/zGW5YI6Zywk+bfq9zmYpORO9lmdN7DknpRw==
+"@types/webextension-polyfill@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@types/webextension-polyfill/-/webextension-polyfill-0.9.0.tgz#a50b5f03161ef83e46721719b49668cfcaac804a"
+  integrity sha512-HG1y1o2hK8ag6Y7dfkrAbfKmMIP+B0E6SwAzUfmQ1dDxEIdLTtMyrStY26suHBPrAL7Xw/chlDW02ugc3uXWtQ==
 
 "@types/webpack-sources@*":
   version "3.2.0"
@@ -11297,10 +11297,10 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-webextension-polyfill@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.8.0.tgz#f80e9f4b7f81820c420abd6ffbebfa838c60e041"
-  integrity sha512-a19+DzlT6Kp9/UI+mF9XQopeZ+n2ussjhxHJ4/pmIGge9ijCDz7Gn93mNnjpZAk95T4Tae8iHZ6sSf869txqiQ==
+webextension-polyfill@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.9.0.tgz#de6c1941d0ef1b0858b20e9c7b46bbc042c5a960"
+  integrity sha512-LTtHb0yR49xa9irkstDxba4GATDAcDw3ncnFH9RImoFwDlW47U95ME5sn5IiQX2ghfaECaf6xyXM8yvClIBkkw==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"
