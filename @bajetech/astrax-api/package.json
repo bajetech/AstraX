@@ -30,7 +30,7 @@
     "@stellar/prettier-config": "^1.0.1",
     "@stellar/wallet-sdk": "^0.5.0-rc.0",
     "@types/webextension-polyfill": "^0.8.0",
-    "prettier": "^2.3.2",
+    "prettier": "^2.8.1",
     "typescript": "^4.4.2",
     "webextension-polyfill": "^0.8.0",
     "xdb-digitalbits-sdk": "^8.2.2"
